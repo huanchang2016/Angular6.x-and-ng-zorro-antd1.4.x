@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+// set default colors and backgournd-colors
+$colors: ( primary: #409BD4, success: #32db64, danger: #f53d3d, warning: #ff9702, light: #fff, dark: #101010);
+@each $class,
+$color in $colors {
+    .#{$class} {
+        color: $color !important;
+    }
+    .bg-#{$class} {
+        background-color: $color !important;
+    }
+}
+
+

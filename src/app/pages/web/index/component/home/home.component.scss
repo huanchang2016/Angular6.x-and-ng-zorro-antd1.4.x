@@ -1,0 +1,20 @@
+.index-page {
+    padding-top: 50px;
+    h3 {
+        line-height: 40px;
+        font-weight: 600;
+        font-size: 18px;
+    }
+    p {
+        text-indent: 2em;
+        line-height: 30px;
+        & a{
+            color: #fff;
+        }
+    }
+    div{
+        &.router-describe{
+            padding: 10px;
+        }
+    }
+}

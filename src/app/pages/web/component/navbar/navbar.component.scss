@@ -1,0 +1,19 @@
+nav {
+    ul {
+        height: 48px;
+        li{
+            line-height: 48px;
+            margin-right: 20px;
+            a {
+                color: #fff;
+                padding: 0 10px;
+            }
+            &:hover{
+                background-color: #fff;
+                a {
+                    color: #409BD4;
+                }
+            }
+        }
+    }
+}
