@@ -2,13 +2,16 @@ import { NgModule } from '@angular/core';
 import { SharedModule } from '../../../shared/shared.module';
 
 import { ZhaopinRoutingModule } from './zhaopin-routing.module';
-import { ZpHomeComponent } from './component/home/home.component';
+import { HomeComponent as ZpHomeComponent } from './component/home/home.component';
 
 @NgModule({
   imports: [
     SharedModule,
     ZhaopinRoutingModule
   ],
-  declarations: [ZpHomeComponent]
+  declarations: [
+    ZpHomeComponent
+    
+  ]
 })
 export class ZhaopinModule { }

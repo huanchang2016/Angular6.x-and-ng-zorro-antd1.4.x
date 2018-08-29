@@ -1,20 +1,29 @@
 
 // -------- 引入官方提供的 less 样式入口文件 -----------
-@import "../node_modules/ng-zorro-antd/src/ng-zorro-antd.less";
+// @import "../node_modules/ng-zorro-antd/src/ng-zorro-antd.less";
 
 // -------- 自定义参数覆盖 -----------
 @icon-url               : "/assets/lib/fonts/iconfont";
 
+@base-theme-color       : #55606a;
 @import "../node_modules/ng-zorro-antd/src/ng-zorro-antd.less";
 
 // The prefix to use on all css classes from ant.
 @ant-prefix             : ant;
 
 // -------- Colors -----------
-@primary-color          : @blue-6;
-@info-color             : @blue-6;
+// @primary-color          : @blue-6;
+// @info-color             : @blue-6;
+// @success-color          : @green-6;
+// @processing-color       : @blue-6;
+// @error-color            : @red-6;
+// @highlight-color        : @red-6;
+// @warning-color          : @gold-6;
+// @normal-color           : #d9d9d9;
+@primary-color          : @base-theme-color;
+@info-color             : @base-theme-color;
 @success-color          : @green-6;
-@processing-color       : @blue-6;
+@processing-color       : @base-theme-color;
 @error-color            : @red-6;
 @highlight-color        : @red-6;
 @warning-color          : @gold-6;

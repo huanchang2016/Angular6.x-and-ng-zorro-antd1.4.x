@@ -1,0 +1,8 @@
+.list-card {
+    width: 100%;
+    overflow: hidden;
+}
+:host ::ng-deep .ant-card-body,
+:host ::ng-deep .ant-card-head {
+    padding: 0;
+}

@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  inputValue: string = '';
+  type:string = '职位';
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  topSearchAnything (){
+    console.log(this.type, this.inputValue);
+  }
 }

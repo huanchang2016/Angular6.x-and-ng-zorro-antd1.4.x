@@ -4,15 +4,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule,
-    RouterModule
+    RouterModule,
   ],
   providers: [
 
