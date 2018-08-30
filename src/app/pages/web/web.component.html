@@ -1,6 +1,15 @@
-<app-header></app-header>
+<app-header (emitLang)="setWebLang($event)"></app-header>
 <app-navbar></app-navbar>
-
-<router-outlet></router-outlet>
-
+<div class="content">
+    <router-outlet></router-outlet>
+</div>
 <app-footer></app-footer>
+
+<!-- 
+<nz-back-top [nzTemplate]="tpl" [nzVisibilityHeight]="200">
+    <ng-template #tpl>
+        <div class="ant-back-top-inner bg-primary">
+            <span>up</span>
+        </div>
+    </ng-template>
+</nz-back-top> -->

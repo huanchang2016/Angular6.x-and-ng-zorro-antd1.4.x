@@ -1,0 +1,48 @@
+
+.captcha-img {
+    height: 32px;
+    width: 100%;
+    overflow: hidden;
+    img {
+         width: 100%;
+    }
+}
+:host ::ng-deep .login-form {
+    width: 100%;
+    .login-form-button {
+        width: 100%;
+    }
+    .ant-form-item {
+        margin-bottom: 10px;
+    }
+    .ant-form-item-control {
+        line-height: 30px;
+    }
+}
+
+:host ::ng-deep .ant-card {
+    border: 0;
+    .ant-card-head {
+        padding: 0;
+        height: 40px;
+        min-height: 40px;
+        line-height: 40px;
+        .ant-card-head-title {
+            padding: 0;
+        }
+        &:before {
+            content: ' ';
+            display: block;
+            width: 5px;
+            height: 20px;
+            float: left;
+            margin-top: 10px;
+            margin-right: 20px;
+        }
+    }
+    .ant-card-body {
+        height: 310px;
+        padding: 10px;
+        overflow: hidden;
+    }
+}

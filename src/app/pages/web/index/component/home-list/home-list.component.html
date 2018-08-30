@@ -1,10 +1,13 @@
-<div class="list-card">
-  <nz-card [nzBordered]="false" nzTitle="Card title" [nzExtra]="extraTemplate">
-    <p>Card content</p>
-    <p>Card content</p>
-    <p>Card content</p>
+<div class="list-card" *ngIf="cardList.length != 0">
+  <nz-card [nzBordered]="false" nzTitle="{{ cardTitle | translate}}" [nzExtra]="extraTemplate">
+    <ul class="list">
+      <li class="clearfix" *ngFor="let list of cardList; i as index;">
+        <span class="fl"><i class="anticon anticon-caret-right"></i></span>
+        <p class="fl ellipsis"><a [routerLink]="['/']" target="_blank" title="{{list.title}}">{{list.title}}</a></p>
+      </li>
+    </ul>
   </nz-card>
 </div>
 <ng-template #extraTemplate>
-  <a>More</a>
+  <a class="icon-more"><i class="anticon anticon-right-circle-o"></i></a>
 </ng-template>

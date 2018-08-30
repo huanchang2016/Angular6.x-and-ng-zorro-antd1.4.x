@@ -1,42 +1,16 @@
-<div class="index-page row">
-  <h3 class="bg-primary light text-center">当前搭建了基础的网站结构</h3>
-  <p> 1. 一级路由中含： 登录、注册、网页内容部分web(index、zhaopin)</p>
-  <div class="bg-primary light router-describe">
-    路由地址：
-    <p> (1)、 /web/home</p>
-    <p> (2)、 /web/zhaopin</p>
-    <p> (3)、 /login</p>
-    <p> (4)、 /register</p>
+<div class="index-page">
+  <div class="row">
+    <div class="banner clearfix">
+      <div class="banner_side_login fl">
+        <app-banner-side-login></app-banner-side-login>
+      </div>
+      <div class="banner_box fl">
+        <app-banner></app-banner>
+      </div>
+      <div class="banner_side_list">
+        <app-banner-side-news></app-banner-side-news>
+      </div>
+    </div>
   </div>
-  <p> 2. 网页内容部分添加了：公共的组件（header、 navbar、 footer、 模态框登录组件login）</p>
-  <p> 3. 网页内容部分创建了子路由模块： index.module、 zhaopin.module</p>
-  <p> 4. 需要注意命名规范，统一</p>
-  <p> 5. 组件之间的关系尽量清晰，提高组件的复用性</p>
-  <p> 6. 命名规范：</p>
-  <p>   方法命名： 小驼峰</p>
-  <p>   定义类名： 大驼峰</p>
-  <p> 7. 页面上的图片元素，统一放在 assets/lib/imgs目录下，其余测试数据中的图片放到assets/lib/imgs/test目录下 </p>
 
-
-  <footer>
-    <p>
-      备注：所有的特性模块、功能模块的目录结构：最外层只有module和routing两个文件、所有的组件内容均统一放在该目录下的component文件夹内！
-    </p>
-    <p>
-      主题：添加了主题修改，在theme.less文件中，修改变量的默认颜色即可： 例如（@primary-color: red;）其它各个颜色在文件中有相应的说明!
-    </p>
-
-  </footer>
-
-  <div>
-    <h4>ng-zorro-antd component test:</h4>
-    <p>
-      <button nz-button nzType="primary" (click)="loadOne()" [nzLoading]="isLoadingOne">Click me!</button>
-      <button nz-button nzType="primary" (click)="loadTwo()" [nzLoading]="isLoadingTwo"><i class="anticon anticon-poweroff"></i>Click
-        me!</button>
-    </p>
-  </div>
-  <div style="width: 300px;">
-      <app-home-list></app-home-list>
-  </div>
 </div>

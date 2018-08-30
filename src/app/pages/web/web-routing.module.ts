@@ -11,6 +11,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', loadChildren: './index/index.module#IndexModule' },
       { path: 'zhaopin', loadChildren: './zhaopin/zhaopin.module#ZhaopinModule' },
+      { path: 'about', loadChildren: './about/about.module#AboutModule' },
     ]
   },
 ];

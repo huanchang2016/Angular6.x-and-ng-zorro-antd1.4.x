@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { List } from '../../../../../../data/interface.class';
 
 @Component({
   selector: 'app-home-list',
@@ -6,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-list.component.scss']
 })
 export class HomeListComponent implements OnInit {
+  title: string = 'card title';
+  @Input()
+  cardTitle:string;
+  @Input()
+  cardList:Array<List>;
 
   constructor() { }
 

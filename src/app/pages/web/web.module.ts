@@ -8,7 +8,6 @@ import { HeaderComponent } from './component/header/header.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { LoginComponent } from './component/login/login.component';
-// import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 const CORECOMPONENT = [
   WebComponent,
@@ -21,7 +20,6 @@ const CORECOMPONENT = [
   imports: [
     SharedModule,
     WebRoutingModule,
-    // NgZorroAntdModule,
   ],
   declarations: [
     ...CORECOMPONENT

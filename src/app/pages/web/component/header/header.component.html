@@ -1,31 +1,34 @@
 <header class="header">
     <div class="row head_top">
         <div class="top_content fr clearfix">
-            <a herf="javascript:;" class="fl"><i class="anticon anticon-qq"></i> QQ</a>
-            <a herf="javascript:;" class="fl"><i class="anticon anticon-wechat"></i> 微信</a>
-            <a href="javascript:;" class="login fl"> 用户登录</a>
-            <a herf="javascript:;" class="fl"><i class="anticon anticon-mobile"></i> 手机版</a>
-            <span class="fl">|</span>
-            <a herf="javascript:;" class="fl"><i class="anticon anticon-phone"></i></a>
-            <div class="fl top_phonenumber">
+            <a herf="javascript:;" class="hover fl"><i class="anticon anticon-qq"></i> {{ "QQ" | translate}}</a>
+            <a herf="javascript:;" class="hover fl"><i class="anticon anticon-wechat"></i> {{ "wechat" | translate}}</a>
+            <a href="javascript:;" class="login hover fl"> {{ "Login In" | translate}}</a>
+            <a herf="javascript:;" class="hover fl"><i class="anticon anticon-mobile"></i> {{ "phone" | translate }}</a>
+            <span class="hover fl">|</span>
+            <a herf="javascript:;" class="hover fl"><i class="anticon anticon-phone"></i></a>
+            <div class="hover fl top_phonenumber">
                 <p>028-82668098</p>
                 <p>028-82743200</p>
+            </div>
+            <div class="top_lang fr">
+                <app-lang></app-lang>
             </div>
         </div>
     </div>
     <div class="head_bottom">
         <div class="row head_botom_content clearfix">
             <h1 class="logo fl"><a href="javascript:;"><img src="/assets/lib/imgs/logo-touming.png" alt="恒信人力-温江人才网"></a></h1>
-            <div class="qr_code fr"><img src="/assets/lib/imgs/qr_code.png" alt="温江人才网"></div>
+            <div class="qr_code fr"><img src="/assets/lib/imgs/qr_code.png" alt="{{'webTitle' | translate}}"></div>
             <div class="head_search fr">
                 <div>
                     <nz-input-group nzSearch [nzAddOnBefore]="addOnBeforeTemplate" [nzAddOnAfter]="addOnAfterTemplate">
-                        <input type="text" nz-input [(ngModel)]="inputValue" placeHolder="请输入关键字查询">
+                        <input type="text" nz-input [(ngModel)]="inputValue" placeholder="{{'searchKeyWords' | translate }}" >
                     </nz-input-group>
                     <ng-template #addOnBeforeTemplate>
                         <nz-select [(ngModel)]="type">
-                            <nz-option [nzLabel]="'职位'" [nzValue]="'职位'"></nz-option>
-                            <nz-option [nzLabel]="'公司'" [nzValue]="'公司'"></nz-option>
+                            <nz-option [nzLabel]="'jobTitle' | translate " [nzValue]="'职位'"></nz-option>
+                            <nz-option [nzLabel]="'company' | translate " [nzValue]="'公司'"></nz-option>
                         </nz-select>
                     </ng-template>
                     <ng-template #addOnAfterTemplate>

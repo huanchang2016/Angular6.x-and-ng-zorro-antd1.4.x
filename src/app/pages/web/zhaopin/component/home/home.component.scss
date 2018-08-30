@@ -1,0 +1,24 @@
+.zp_home {
+    padding-top: 50px;
+    h3 {
+        line-height: 40px;
+        font-weight: 600;
+        font-size: 18px;
+    }
+    p {
+        text-indent: 2em;
+        line-height: 30px;
+        & a{
+            color: #fff;
+        }
+    }
+    div{
+        margin-top: 20px;
+        &.router-describe{
+            padding: 10px;
+        }
+    }
+    [nz-button] {
+        margin: 0 8px;
+    }
+}

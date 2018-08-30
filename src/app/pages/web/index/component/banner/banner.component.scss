@@ -1,0 +1,42 @@
+.banner {
+    [nz-carousel-content] {
+        text-align: center;
+        height: 350px;
+        line-height: 350px;
+        background: #364d79;
+        color: #fff;
+        overflow: hidden;
+    }
+    h3 {
+        color: #fff;
+    }
+}
+
+:host ::ng-deep .ant-carousel {
+    .slick-dots {
+        height: 22px;
+        text-align: right;
+        li>button {
+            width: 22px;
+            height: 22px;
+            line-height: 22px;
+            margin-right: 5px;
+            border-radius: 50%;
+            background-color: #de7638;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+        }
+        li.slick-active {
+            button {
+                background-color: #fff;
+            }
+        }
+    }
+    .slick-slide {
+        img {
+            width: 100%;
+        }
+    }
+}

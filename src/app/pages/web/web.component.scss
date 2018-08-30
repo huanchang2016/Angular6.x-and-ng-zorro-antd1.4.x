@@ -1,0 +1,16 @@
+.content {
+    min-height: 600px;
+    height: auto !important;
+}
+
+:host ::ng-deep .ant-back-top {
+    bottom: 100px;
+}
+
+:host ::ng-deep .ant-back-top-inner {
+    line-height: 40px;
+    border-radius: 4px;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+}

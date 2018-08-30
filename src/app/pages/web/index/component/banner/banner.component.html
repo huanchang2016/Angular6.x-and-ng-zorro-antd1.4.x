@@ -1,0 +1,7 @@
+<div class="banner">
+  <nz-carousel [nzEffect]="'fade'" nzAutoPlay>
+    <div nz-carousel-content *ngFor="let banner of bannerArray">
+      <a [routerLink]="[banner.link]"><img [src]="banner.path" alt="banner.description"></a>
+    </div>
+  </nz-carousel>
+</div>
