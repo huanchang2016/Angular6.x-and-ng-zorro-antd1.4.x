@@ -12,4 +12,7 @@ export class UnitsComponent implements OnInit {
   ngOnInit() {
   }
 
+  changeSlideIndex() {
+    console.log('change page index !')
+  }
 }
