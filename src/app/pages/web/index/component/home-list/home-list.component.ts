@@ -13,6 +13,8 @@ export class HomeListComponent implements OnInit {
   @Input()
   cardList:Array<List>;
 
+
+  tabs = [ 1, 2, 3 ];
   constructor() { }
 
   ngOnInit() {

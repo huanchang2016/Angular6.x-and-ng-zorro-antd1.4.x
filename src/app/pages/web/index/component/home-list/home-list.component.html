@@ -1,13 +1,16 @@
-<div class="list-card" *ngIf="cardList.length != 0">
-  <nz-card [nzBordered]="false" nzTitle="{{ cardTitle | translate}}" [nzExtra]="extraTemplate">
-    <ul class="list">
-      <li class="clearfix" *ngFor="let list of cardList; i as index;">
-        <span class="fl"><i class="anticon anticon-caret-right"></i></span>
-        <p class="fl ellipsis"><a [routerLink]="['/']" target="_blank" title="{{list.title}}">{{list.title}}</a></p>
-      </li>
-    </ul>
-  </nz-card>
-</div>
-<ng-template #extraTemplate>
-  <a class="icon-more"><i class="anticon anticon-right-circle-o"></i></a>
-</ng-template>
+<div class="card-container">
+    <nz-tabset [nzTabPosition]="'top'" [nzType]="'card'" [nzTabBarExtraContent]="extraTemplate">
+      <nz-tab [nzTitle]=" cardTitle | translate ">
+        <ul class="list">
+          <li class="clearfix" *ngFor="let list of cardList; i as index;">
+            <span class="fl"><i class="anticon anticon-caret-right"></i></span>
+            <p class="fl ellipsis"><a [routerLink]="['/']" target="_blank" title="{{list.title}}">{{list.title}}</a></p>
+          </li>
+        </ul>
+      </nz-tab>
+    </nz-tabset>
+
+    <ng-template #extraTemplate>
+        <a class="icon-more"><i class="anticon anticon-right-circle-o"></i></a>
+      </ng-template>
+  </div>

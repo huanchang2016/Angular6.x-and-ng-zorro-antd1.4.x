@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpRequestService } from './http-request/http-request.service';
 
 @NgModule({
   imports: [
@@ -13,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule,
   ],
   providers: [
-
+    HttpRequestService
   ]
 })
 export class CoreModule {

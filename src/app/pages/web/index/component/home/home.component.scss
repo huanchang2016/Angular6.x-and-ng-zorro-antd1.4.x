@@ -2,7 +2,7 @@
     background-color: #f8f4f2;
     padding-top: 10px;
     padding-bottom: 30px;
-    .banner {
+    .banner, .notific {
         width: 100%;
         height: 350px;
         overflow: hidden;
@@ -20,5 +20,14 @@
         .banner_side_list {
             width: 250px;
         }
+    }
+    // 新闻 和 职位列表
+    .notific {
+        margin-top: 30px;
+    }
+    // 两栏广告
+    .advertising {
+        margin-top: 10px;
+        border: 1px solid #e9ecd8;
     }
 }

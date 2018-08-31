@@ -1,36 +1,52 @@
-.card-container {
-    width: 100%;
-    overflow: hidden;
-    .icon-more {
-        color: #c5beb9;
-        &:hover {
-            color: #4e79a7;
+.position {
+    margin-bottom: 10px;
+    .position_title {
+        line-height: 24px;
+        h4 {
+            max-width: 160px;
+            font-size: 14px;
+            a{
+                color: #000;
+            }
         }
     }
-    .list {
-        height: 100%;
-        overflow: hidden;
-        li {
-            width: 100%;
-            line-height: 30px;
-            &>span {
-                display: block;
-                width: 20px;
-                font-size: 16px;
+    .position_require {
+        p {
+            line-height: 20px;
+            font-size: 12px;
+        }
+    }
+    .position_company {
+        line-height: 24px;
+        .position_com_logo {
+            width: 40px;
+            height: 20px;
+            margin-right: 10px;
+            overflow: hidden;
+            img {
+                width: 100%;
             }
-            &>p{
-                width: calc(100% - 20px);
-                font-size: 14px;
-            }
-            &:hover {
-                span, i, a {
-                    color: #4c80b6;
-                }
+        }
+        .position_com_name {
+            width: 240px;
+            font-size: 14px;
+            a {
+                color: #000;
             }
         }
     }
 }
-// modify
+.position ::ng-deep .ant-card-body{
+    padding: 0 10px;
+}
+
+.icon-more {
+    margin-right: 10px;
+    &:hover {
+        color: #4d81b7;
+    }
+}
+
 :host {
     background: #F5F5F5;
     overflow: hidden;
@@ -45,7 +61,7 @@
 .card-container ::ng-deep .ant-tabs-card .ant-tabs-content .ant-tabs-tabpane {
     height: 310px;
     background: #fff;
-    padding: 10px 10px 0;
+    padding: 10px;
 }
 
 .card-container ::ng-deep .ant-tabs-card .ant-tabs-bar {

@@ -12,8 +12,8 @@
     .login-form-button {
         width: 100%;
     }
-    .ant-form-item {
-        margin-bottom: 10px;
+    .ant-form-item:nth-child(1), .ant-form-item:nth-child(2), .ant-form-item:nth-last-child(1) {
+        margin-bottom: 12px;
     }
     .ant-form-item-control {
         line-height: 30px;
@@ -44,5 +44,13 @@
         height: 310px;
         padding: 10px;
         overflow: hidden;
+    }
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    .reg-btn {
+        // width: 115px;
     }
 }

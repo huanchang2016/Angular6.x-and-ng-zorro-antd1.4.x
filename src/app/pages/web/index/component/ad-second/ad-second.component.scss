@@ -1,0 +1,11 @@
+.ad-box {
+    height: 110px;
+    padding: 3px;
+    &>div{
+        height: 102px;
+        overflow: hidden;
+        img {
+            width: 100%;
+        }
+    }
+}

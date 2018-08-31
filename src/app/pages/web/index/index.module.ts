@@ -7,12 +7,21 @@ import { HomeListComponent } from './component/home-list/home-list.component';
 import { BannerSideNewsComponent } from './component/banner-side-news/banner-side-news.component';
 import { BannerSideLoginComponent } from './component/banner-side-login/banner-side-login.component';
 import { BannerComponent } from './component/banner/banner.component';
+import { AdSecondComponent } from './component/ad-second/ad-second.component';
+import { IndexService } from './service/index.service';
+import { ExpatriationNewsComponent } from './component/expatriation-news/expatriation-news.component';
+import { NotificNewsComponent } from './component/notific-news/notific-news.component';
+import { RecruitComponent } from './component/recruit/recruit.component';
+import { UnitsComponent } from './component/units/units.component';
 
 @NgModule({
   imports: [
     SharedModule,
     IndexRoutingModule
   ],
-  declarations: [HomeComponent, HomeListComponent, BannerSideNewsComponent, BannerSideLoginComponent, BannerComponent]
+  declarations: [HomeComponent, HomeListComponent, BannerSideNewsComponent, BannerSideLoginComponent, BannerComponent, AdSecondComponent, ExpatriationNewsComponent, NotificNewsComponent, RecruitComponent, UnitsComponent],
+  providers: [
+    IndexService
+  ]
 })
 export class IndexModule { }
