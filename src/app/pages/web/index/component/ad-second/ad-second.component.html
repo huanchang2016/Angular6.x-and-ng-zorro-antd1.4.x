@@ -1,8 +1,5 @@
-<div nz-row [nzGutter]="10" class="ad-box">
-  <div nz-col [nzSpan]="12">
-    <a href="javascript:;"><img src="/assets/lib/imgs/test/banner1.jpg" alt="双栏广告1"></a>
-  </div>
-  <div nz-col [nzSpan]="12">
-    <a href="javascript:;"><img src="/assets/lib/imgs/test/banner2.jpg" alt="双栏广告2"></a>
+<div nz-row [nzGutter]="10" class="ad-box" *ngIf="AdSecondList.length != 0">
+  <div nz-col [nzSpan]="12" [class.mb8]="AdSecondList.length > 2" *ngFor="let advert of AdSecondList">
+    <a [routerLink]="[advert.url]"><img [src]="advert.path" alt="双栏广告1"></a>
   </div>
 </div>

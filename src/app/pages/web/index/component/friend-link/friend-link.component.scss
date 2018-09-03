@@ -1,0 +1,28 @@
+.link {
+    .link_title {
+        height: 60px;
+        padding: 10px 0;
+        .link_title_zh {
+            font-size: 16px;
+        }
+        .link_title_en {
+            font-size: 12px;
+        }
+    }
+    .link_add {
+        height: 60px;
+        line-height: 60px;
+        font-size: 14px;
+    }
+    // 友链列表
+    .link_list {
+        padding: 10px 0;
+        li {
+            padding: 0 10px;
+            line-height: 30px;
+            a {
+                color: #000;
+            }
+        }
+    }
+}

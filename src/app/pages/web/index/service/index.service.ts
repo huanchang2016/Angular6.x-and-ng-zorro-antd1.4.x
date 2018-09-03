@@ -10,6 +10,7 @@ export class IndexService {
     private httpRequest: HttpRequestService
   ) { }
 
+
   showMessage (type, msg) {
     this.httpRequest.showMessage(type, msg);
   }

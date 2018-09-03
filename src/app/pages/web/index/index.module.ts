@@ -13,13 +13,16 @@ import { ExpatriationNewsComponent } from './component/expatriation-news/expatri
 import { NotificNewsComponent } from './component/notific-news/notific-news.component';
 import { RecruitComponent } from './component/recruit/recruit.component';
 import { UnitsComponent } from './component/units/units.component';
+import { AdvertComponent } from './component/advert/advert.component';
+import { AdvertisingComponent } from './component/advertising/advertising.component';
+import { FriendLinkComponent } from './component/friend-link/friend-link.component';
 
 @NgModule({
   imports: [
     SharedModule,
     IndexRoutingModule
   ],
-  declarations: [HomeComponent, HomeListComponent, BannerSideNewsComponent, BannerSideLoginComponent, BannerComponent, AdSecondComponent, ExpatriationNewsComponent, NotificNewsComponent, RecruitComponent, UnitsComponent],
+  declarations: [HomeComponent, HomeListComponent, BannerSideNewsComponent, BannerSideLoginComponent, BannerComponent, AdSecondComponent, ExpatriationNewsComponent, NotificNewsComponent, RecruitComponent, UnitsComponent, AdvertComponent, AdvertisingComponent, FriendLinkComponent],
   providers: [
     IndexService
   ]

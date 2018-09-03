@@ -1,12 +1,24 @@
 <div class="units clearfix">
   <div class="prev text-center fl">
-    <span class="hover" (click)="changeSlideIndex()">
+    <span class="hover" (click)="nzCarouselSwiper.pre()">
         <i class="anticon anticon-left-circle-o"></i>
     </span>
   </div>
-  <div class="wraper fl">sfasdfasdf</div>
+  <div class="wraper fl">
+    <nz-carousel #nzCarouselSwiper nzAutoPlay [nzEffect]="'fade'" [nzAutoPlaySpeed]="5000" [nzDots]="false">
+      <div nz-carousel-content *ngFor="let units of unitsArray" class="clearfix">
+        <div class="wraper-slider-box fl" *ngFor="let slider of units">
+          <div class="wraper-slide">
+            <a [routerLink]="[slider.url]">
+              <img [src]="slider.path" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </nz-carousel>
+  </div>
   <div class="next text-center fr">
-    <span class="hover" (click)="changeSlideIndex()">
+    <span class="hover" (click)="nzCarouselSwiper.next()">
         <i class="anticon anticon-right-circle-o"></i>
     </span>
   </div>

@@ -3,10 +3,12 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
-import { Observable } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
-import { StorageValue } from '../../../data/interface.class';
 import { NzMessageService } from 'ng-zorro-antd';
+import { StorageValue } from '../../../data/interface.class'
+
+// import { observable } from 'rxjs';
+import { throwError } from 'rxjs'
+import { catchError, retry } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -82,9 +84,9 @@ export class HttpRequestService {
       // The response body may contain clues as to what went wrong,
       console.error(
         `请求错误 ${error.status}, ` +
-        `错误原因: ${error.error}`);
+        `错误原因: ${error.message}`);
     }
     // return an observable with a user-facing error message
-    return Observable.throw({code: 0, data: null, msg: '请求失败，请稍后重试.'});
+    return throwError({code: 0, data: null, msg: '请求失败，请稍后重试.'});
   };
 }

@@ -22,6 +22,10 @@ div::before {
     background-color: map-get($map: $colors, $key: primary);
 }
 
+.mb8 {
+    margin-bottom: 8px;
+}
+
 // 更多的字体图标
 .icon-more {
     font-size: 18px;
