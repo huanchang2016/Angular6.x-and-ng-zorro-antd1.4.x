@@ -31,7 +31,9 @@
               "src/initialize.scss",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/lib/js/hammer.js"
+            ]
           },
           "configurations": {
             "production": {

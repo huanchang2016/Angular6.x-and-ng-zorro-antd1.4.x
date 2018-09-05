@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IndexService } from '../../service/index.service';
 import { HttpRequestService } from '../../../../../core/http-request/http-request.service';
+
+@ViewChild('input')
 
 @Component({
   selector: 'app-banner-side-login',
@@ -36,15 +38,24 @@ export class BannerSideLoginComponent implements OnInit {
       remember: [ true ]
     });
 
+    this.validateForm.addControl('test', this.fb.control(''));
+    console.log(this.validateForm.value);
     this.validateForm.valueChanges.subscribe( () => {
       this.isError = !this.checkFormValue();
     })
   }
   
   submitForm(): void {
+    // console.log(this.validateForm);
     for (const i in this.validateForm.controls) {      
       this.validateForm.controls[ i ].markAsDirty();
       this.validateForm.controls[ i ].updateValueAndValidity();
+      
+      // 判断当前表单元素是否通过验证，如果没有，则最先检测出来的input获得焦点
+      if(this.validateForm.controls[i].status === "INVALID") {
+        document.getElementById(i).focus();
+        return;
+      }
     }
 
     // 检测信息填写是否完整
@@ -65,7 +76,6 @@ export class BannerSideLoginComponent implements OnInit {
     
     for (const i in this.validateForm.controls) {
       if (this.validateForm.get(i).dirty && this.validateForm.get(i).errors) {
-        console.log(i);
         this.isError = true;
         this.toastMsg = `您的${ this.formKey[i] }未正确填写！`;
         return false;
