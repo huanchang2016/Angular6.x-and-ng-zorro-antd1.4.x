@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
+import { DynamicService } from './service/dynamic.service';
+import { DynamicFieldDirective } from './dynamic-field.directive';
 
 import { DynamicFormComponent } from './component/dynamic-form/dynamic-form.component';
 import { FormButtonComponent } from './component/form-button/form-button.component';
@@ -17,7 +19,8 @@ import { FormFileComponent } from './component/form-file/form-file.component';
 import { FormMultipleFileComponent } from './component/form-multiple-file/form-multiple-file.component';
 import { FormImageComponent } from './component/form-image/form-image.component';
 import { FormMultipleImagesComponent } from './component/form-multiple-images/form-multiple-images.component';
-import { DynamicFieldDirective } from './dynamic-field.directive';
+import { FormDateMonthPickerComponent } from './component/form-date-month-picker/form-date-month-picker.component';
+
 
 const DYNAMICCOMPONENT = [
   FormButtonComponent,
@@ -45,6 +48,7 @@ const DYNAMICCOMPONENT = [
     DynamicFieldDirective,
     DynamicFormComponent,
     ...DYNAMICCOMPONENT,
+    FormDateMonthPickerComponent,
   ],
   entryComponents: [
     ...DYNAMICCOMPONENT,
@@ -52,5 +56,8 @@ const DYNAMICCOMPONENT = [
   exports: [
     DynamicFormComponent,
   ],
+  providers: [
+    DynamicService,
+  ]
 })
 export class DynamicFormModule { }

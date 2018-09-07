@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { DynamicService } from '../../service/dynamic.service';
 
 @Component({
   selector: 'app-form-datepicker',
@@ -9,9 +10,17 @@ import { FormGroup } from '@angular/forms';
 export class FormDatepickerComponent implements OnInit {
   config;
   group: FormGroup;
-  constructor() { }
+  public date:any;
+
+  constructor(
+    private dynamicService: DynamicService,
+  ) { }
 
   ngOnInit() {
+    this.date = this.config.value;
   }
 
+  dateChange(date) {
+    this.group.value[this.config.name] = this.dynamicService.dealDatePickerDay(date);
+  }
 }

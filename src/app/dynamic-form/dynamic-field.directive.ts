@@ -7,6 +7,7 @@ import { FormRadioComponent } from './component/form-radio/form-radio.component'
 import { FormCheckboxComponent } from './component/form-checkbox/form-checkbox.component';
 import { FormSelectComponent } from './component/form-select/form-select.component';
 import { FormDatepickerComponent } from './component/form-datepicker/form-datepicker.component';
+import { FormDateMonthPickerComponent } from './component/form-date-month-picker/form-date-month-picker.component';
 import { FormTimepickerComponent } from './component/form-timepicker/form-timepicker.component';
 import { FormCascaderComponent } from './component/form-cascader/form-cascader.component';
 import { FormInputTextComponent } from './component/form-input-text/form-input-text.component';
@@ -22,8 +23,9 @@ const components = {
   radio : FormRadioComponent,
   checkbox: FormCheckboxComponent,
   select: FormSelectComponent,
-  datepicker: FormDatepickerComponent,
-  timepicker :FormTimepickerComponent,
+  dateDay: FormDatepickerComponent,
+  dateMonth: FormDateMonthPickerComponent,
+  dateTime :FormTimepickerComponent,
   cascader :FormCascaderComponent,
   inputtext :FormInputTextComponent,
   inputnumber :FormInputNumberComponent,

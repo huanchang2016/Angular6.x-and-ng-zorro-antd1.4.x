@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { UploadFile } from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-form-file',
@@ -9,9 +10,18 @@ import { FormGroup } from '@angular/forms';
 export class FormFileComponent implements OnInit {
   config;
   group: FormGroup;
-  constructor() { }
+  _file: UploadFile[] = [];
+  constructor() {}
+
 
   ngOnInit() {
   }
 
+  beforeUpload = (file: UploadFile): boolean => {
+    console.log(file);
+    let uploadFile = file;
+    this._file[0] = uploadFile;
+    this.group.value[this.config.name] = uploadFile;
+    return false;
+  }
 }

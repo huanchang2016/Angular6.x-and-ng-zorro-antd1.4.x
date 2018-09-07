@@ -1,3 +1,10 @@
-<p>
-  form-multiple-images works!
-</p>
+<nz-form-item [formGroup]="group">
+  <nz-form-label [nzSm]="6" [nzXs]="24" [nzRequired] [nzFor]="config.name">{{ config.label }}</nz-form-label>
+  <nz-form-control [nzSm]="14" [nzXs]="24">
+    <nz-upload [(nzFileList)]="fileList" [nzBeforeUpload]="beforeUpload">
+      <span class="multiple-file-upload hover">
+        <i class="anticon anticon-upload"></i><span>图片上传</span>
+      </span>
+    </nz-upload>
+  </nz-form-control>
+</nz-form-item>

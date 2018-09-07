@@ -1,6 +1,6 @@
-<nz-form-item [formGroup]="group">
+<nz-form-item>
   <nz-form-label [nzSm]="6" [nzXs]="24" [nzRequired] [nzFor]="config.name">{{ config.label }}</nz-form-label>
   <nz-form-control [nzSm]="14" [nzXs]="24">
-    <input #inputElement nz-input placeholder="{{config.placeholder}}" [formControlName]="config.name" (ngModelChange)="onChange($event)">
+    <nz-month-picker [(ngModel)]="date" (ngModelChange)="dateChange($event)" nzPlaceHolder="{{ config.placeholder }}"></nz-month-picker>
   </nz-form-control>
 </nz-form-item>

@@ -3,11 +3,11 @@ import { FormGroup } from '@angular/forms';
 import { DynamicService } from '../../service/dynamic.service';
 
 @Component({
-  selector: 'app-form-timepicker',
-  templateUrl: './form-timepicker.component.html',
-  styleUrls: ['./form-timepicker.component.scss']
+  selector: 'app-form-date-month-picker',
+  templateUrl: './form-date-month-picker.component.html',
+  styleUrls: ['./form-date-month-picker.component.scss']
 })
-export class FormTimepickerComponent implements OnInit {
+export class FormDateMonthPickerComponent implements OnInit {
   config;
   group: FormGroup;
   public date:any;
@@ -21,7 +21,6 @@ export class FormTimepickerComponent implements OnInit {
   }
 
   dateChange(date) {
-    console.log(date);
     this.group.value[this.config.name] = this.dynamicService.dealDatePickerTime(date);
   }
 }

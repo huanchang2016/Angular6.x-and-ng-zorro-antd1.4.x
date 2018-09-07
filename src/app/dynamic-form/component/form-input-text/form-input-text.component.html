@@ -1,9 +1,6 @@
-<div 
-    class="dynamic-field form-input" 
-    [formGroup]="group">
-    <label>{{ config.label }}</label>
-    <input
-      type="text"
-      [attr.placeholder]="config.placeholder"
-      [formControlName]="config.name" />
-  </div>
+<nz-form-item [formGroup]="group">
+    <nz-form-label [nzSm]="6" [nzXs]="24" [nzRequired] [nzFor]="config.name">{{ config.label }}</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24">
+        <input nz-input placeholder="{{config.placeholder}}" [formControlName]="config.name" (ngModelChange)="onChange($event)">
+    </nz-form-control>
+</nz-form-item>

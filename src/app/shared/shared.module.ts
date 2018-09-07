@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NzButtonModule, NzCardModule, NzInputModule, NzSelectModule, NzMenuModule, NzBackTopModule, NzCarouselModule, NzFormModule, NzCheckboxModule, NzGridModule, NzTabsModule, NzRadioModule, NzCascaderModule, NzDatePickerModule, NzTimePickerModule, NzInputNumberModule, NzUploadModule } from 'ng-zorro-antd';
+import { NzButtonModule, NzCardModule, NzInputModule, NzSelectModule, NzMenuModule, NzBackTopModule, NzCarouselModule, NzFormModule, NzCheckboxModule, NzGridModule, NzTabsModule, NzRadioModule, NzCascaderModule, NzDatePickerModule, NzTimePickerModule, NzInputNumberModule, NzUploadModule, NzModalModule } from 'ng-zorro-antd';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 // ngx-translate
@@ -33,6 +33,7 @@ const _NZMODULEARRAY = [
   NzInputNumberModule,
   NzUploadModule,
   NzCheckboxModule,
+  NzModalModule,
 ]
 
 @NgModule({

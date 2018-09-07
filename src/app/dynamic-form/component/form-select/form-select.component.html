@@ -1,11 +1,8 @@
-<div 
-    class="dynamic-field form-select"
-    [formGroup]="group">
-    <label>{{ config.label }}</label>
-    <select [formControlName]="config.name">
-      <option value="">{{ config.placeholder }}</option>
-      <option *ngFor="let option of config.options" value="{{option}}">
-        {{ option }}
-      </option>
-    </select>
-  </div>
+<nz-form-item [formGroup]="group">
+  <nz-form-label [nzSm]="6" [nzXs]="24" [nzRequired] [nzFor]="config.name">{{ config.label }}</nz-form-label>
+  <nz-form-control [nzSm]="14" [nzXs]="24">
+    <nz-select style="width: 200px;" [formControlName]="config.name" nzAllowClear nzPlaceHolder="{{ config.placeholder }}">
+      <nz-option *ngFor="let option of config.options" [nzValue]="option.value" [nzLabel]="option.label"></nz-option>
+    </nz-select>
+  </nz-form-control>
+</nz-form-item>

@@ -1,3 +1,8 @@
-<p>
-  form-radio works!
-</p>
+<nz-form-item [formGroup]="group">
+  <nz-form-label [nzSm]="6" [nzXs]="24" [nzRequired] [nzFor]="config.name">{{ config.label }}</nz-form-label>
+  <nz-form-control [nzSm]="14" [nzXs]="24">
+    <nz-radio-group [formControlName]="config.name">
+      <label nz-radio *ngFor="let option of config.options" [nzValue]="option.value">{{ option.label }}</label>
+    </nz-radio-group>
+  </nz-form-control>
+</nz-form-item>

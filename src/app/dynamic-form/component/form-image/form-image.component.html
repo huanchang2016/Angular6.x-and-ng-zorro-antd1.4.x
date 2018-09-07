@@ -1,3 +1,30 @@
-<p>
-  form-image works!
-</p>
+<nz-form-item [formGroup]="group">
+  <nz-form-label [nzSm]="6" [nzXs]="24" [nzRequired] [nzFor]="config.name">{{ config.label }}</nz-form-label>
+  <nz-form-control [nzSm]="14" [nzXs]="24">
+      <!-- <nz-upload class="avatar-uploader"
+      nzAction="https://jsonplaceholder.typicode.com/posts/"
+      nzName="avatar"
+      nzListType="picture-card"
+      [nzShowUploadList]="false"
+      [nzBeforeUpload]="beforeUpload"
+      >
+      <ng-container *ngIf="!avatarUrl">
+        <i class="anticon anticon-plus"></i>
+        <div class="ant-upload-text">Upload</div>
+      </ng-container>
+      <img *ngIf="avatarUrl" [src]="avatarUrl" class="avatar">
+    </nz-upload> -->
+    
+    <nz-upload class="avatar-uploader"
+      nzName="{{config.name}}"
+      nzListType="picture-card"
+      [nzShowUploadList]="false"
+      [nzBeforeUpload]="beforeUpload">
+      <ng-container *ngIf="!avatarUrl">
+        <i class="anticon anticon-plus"></i>
+        <div class="ant-upload-text">上传图片</div>
+      </ng-container>
+      <img *ngIf="avatarUrl" [src]="avatarUrl" class="avatar">
+    </nz-upload>
+  </nz-form-control>
+</nz-form-item>

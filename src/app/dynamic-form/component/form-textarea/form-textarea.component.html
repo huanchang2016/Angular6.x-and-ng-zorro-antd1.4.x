@@ -1,3 +1,6 @@
-<p>
-  form-textarea works!
-</p>
+<nz-form-item [formGroup]="group">
+    <nz-form-label [nzSm]="6" [nzXs]="24" [nzRequired] [nzFor]="config.name">{{ config.label }}</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24">
+        <textarea style="height: 100px;" row="4" nz-input placeholder="{{config.placeholder}}" [formControlName]="config.name"></textarea>
+    </nz-form-control>
+</nz-form-item>

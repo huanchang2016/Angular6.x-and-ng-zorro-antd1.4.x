@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form-button',
@@ -8,7 +7,6 @@ import { FormGroup } from '@angular/forms';
 })
 export class FormButtonComponent implements OnInit {
   config;
-  group: FormGroup;
   constructor() { }
 
   ngOnInit() {
