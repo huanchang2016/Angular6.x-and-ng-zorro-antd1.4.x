@@ -1,0 +1,80 @@
+.account {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    .card-title {
+        height: 50px;
+        border: 1px solid #d9dadc;
+        border-left: 0;
+        h2 {
+            width: 200px;
+            height: 60px;
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: -10px;
+            overflow: hidden;
+            .card-title-border-top {
+                height: 3px;
+            }
+            .card-title-content {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 58px;
+                line-height: 57px;
+                background-color: #fff;
+                border: 1px solid #d9dadc;
+                border-top: 0;
+                span {
+                    display: block;
+                }
+                .card-title-bg {
+                    width: 34px;
+                    height: 34px;
+                    background: url('/assets/lib/imgs/test/register_user_type1.png') no-repeat left top;
+                    background-size: cover;
+                }
+            }
+        }
+    }
+
+    .card-content {
+        padding: 40px 0;
+        border: 1px solid #d9dadc;
+        border-top: 0;
+        .captcha-box {
+            width: 70px;
+            height: 40px;
+            padding-top: 6px;
+            overflow: hidden;
+            img {
+                width: 100%;
+            }
+        }
+        .changeCaptch {
+            padding-left: 20px;
+        }
+        .steps {
+            nz-steps {
+                margin-top: 8px;
+                margin-left: -40px;
+            }
+            .showpassword {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+:host ::ng-deep .account {
+    .ant-card {
+        border: 0;
+    }
+    .ant-card-body {
+        padding: 0;
+    }
+    .ant-btn-primary {
+        background-color: #2186ca;
+        border-color: #2186ca;
+    }
+}

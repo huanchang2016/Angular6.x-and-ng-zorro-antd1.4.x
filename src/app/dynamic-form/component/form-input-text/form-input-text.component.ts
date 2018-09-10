@@ -15,4 +15,8 @@ export class FormInputTextComponent implements OnInit {
     
   }
 
+  onChange($event:string){
+    console.log(this.group.get(this.config.name).dirty);
+    console.log(this.group.get(this.config.name).errors)
+  }
 }

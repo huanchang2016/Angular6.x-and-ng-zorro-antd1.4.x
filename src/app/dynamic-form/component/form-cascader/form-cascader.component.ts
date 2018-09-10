@@ -9,13 +9,20 @@ import { FormGroup } from '@angular/forms';
 export class FormCascaderComponent implements OnInit {
   config;
   group: FormGroup;
-  public values: any[] = null;
+  
+  public isError:boolean = false;
   constructor() { }
 
   ngOnInit() {
     console.log(this.group);
   }
-  public onChanges(values: any): void {
-    console.log(values, this.values);
+
+  onChanges($event: any): void {
+    if(this.group.get(this.config.name).dirty && this.group.get(this.config.name).errors) {
+      this.isError = true;
+    }else {
+      this.isError = false;
+    }
   }
+
 }

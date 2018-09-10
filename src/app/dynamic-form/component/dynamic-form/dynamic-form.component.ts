@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'dynamic-form',
@@ -8,7 +8,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
     <form
       nz-form
       [formGroup]="form"
-      (ngSubmit)="submitted.emit(form.value)">
+      (ngSubmit)="submitted.emit(form)">
       <ng-container
         *ngFor="let field of config;"
         dynamicField
@@ -27,7 +27,7 @@ export class DynamicFormComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
     this.form = this.createGroup();
@@ -35,7 +35,11 @@ export class DynamicFormComponent implements OnInit {
 
   createGroup() {
     const group = this.fb.group({});
-    this.config.forEach(control => group.addControl(control.name, this.fb.control(control.value)));
+    this.config.forEach(control => {
+      group.addControl(control.name, this.fb.control(control.value, [Validators.required, Validators.maxLength(10)] ));
+    });
+    console.log(group);
     return group;
   }
+  
 }

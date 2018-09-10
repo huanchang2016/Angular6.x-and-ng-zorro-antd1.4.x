@@ -9,9 +9,15 @@ import { FormGroup } from '@angular/forms';
 export class FormEditorComponent implements OnInit {
   config;
   group: FormGroup;
+
+  content: string;
   constructor() { }
 
   ngOnInit() {
+    this.content = this.config.vlaue || this.config.placeholder;
   }
 
+  getMyEditorContent($event) {
+    this.group.value[this.config.name] = $event;
+  }
 }

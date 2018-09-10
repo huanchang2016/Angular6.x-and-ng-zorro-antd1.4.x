@@ -1,0 +1,40 @@
+.content {
+    height: 410px;
+    background-color: #f7f7f7;
+    background: url('/assets/lib/imgs/test/login_page_bg.jpg') no-repeat left top;
+    background-size: 100% 100%;
+    .login {
+        width: 300px;
+        height: 360px;
+        color: #fff;
+        margin: 25px 50px 25px 0;
+        background: rgba(85, 96, 106, 0.9);
+        .login-title {
+            line-height: 60px;
+            font-size: 18px;
+        }
+        .login-form {
+            padding: 0 10px;
+        }
+    }
+}
+
+
+.captcha-img {
+    height: 32px;
+    width: 60px;
+    margin-top: 7px;
+    overflow: hidden;
+    img {
+         width: 100%;
+    }
+}
+:host ::ng-deep .login-form {
+    .login-form-button {
+        width: 100%;
+    }
+    .ant-btn-primary {
+        background-color: #da7724;
+        border-color: #da7724;
+    }
+}

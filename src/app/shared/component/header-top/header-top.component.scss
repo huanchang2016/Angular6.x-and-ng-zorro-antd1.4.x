@@ -1,0 +1,69 @@
+.head-top {
+    height: 48px;
+    line-height: 48px;
+    .back {
+        a {
+            font-size: 14px;
+            i {
+                font-size: 18px;
+            }
+        }
+    }
+    .head-top-login {
+        .login-box {
+            height: 28px;
+            line-height: 28px;
+            margin-top: 10px;
+            a {
+                display: block;
+                margin-right: 20px;
+                .icon {
+                    margin-right: 5px;
+                    display: inline-block;
+                    background: url('/assets/lib/imgs/spirit_icon.png') no-repeat;
+                }
+                .qq_bg {
+                    width: 21px;
+                    height: 22px;
+                    background-position: -5px -5px;
+                }
+                .wechat_bg {
+                    width: 28px;
+                    height: 20px;
+                    background-position: -30px -7px;
+                }
+            }
+        }
+    }
+    .head-top-border-bottom {
+        width: 100%;
+        height: 1px;
+    }
+}
+.head-bottom {
+    margin: 15px 0;
+    height: 60px;
+    overflow: hidden;
+    .logo {
+        width: 300px;
+        img {
+            width: 100%;
+            overflow: hidden;
+        }
+    }
+    .link-phone {
+        width: 250px;
+        display: flex;
+        align-items: center;
+        .phone-img {
+            width: 60px;
+            height: 60px;
+            img {
+                width: 100%;
+            }
+        }
+        .phone-number {
+            margin: 0 20px;
+        }
+    }
+}

@@ -1,57 +1,57 @@
 <div class="login">
-    <nz-card nzTitle="{{'Login In' | translate}}">
-        <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
-            <nz-form-item>
-              <nz-form-control>
-                <nz-input-group nzPrefixIcon="anticon anticon-user">
-                  <input type="text" nz-input formControlName="userName" id="userName" placeholder="用户名">
-                </nz-input-group>
-                <!-- <nz-form-explain *ngIf="validateForm.get('userName').dirty && validateForm.get('userName').errors">Please input your username!</nz-form-explain> -->
-              </nz-form-control>
-            </nz-form-item>
-            <nz-form-item>
-              <nz-form-control>
-                <nz-input-group nzPrefixIcon="anticon anticon-lock">
-                  <input type="password" nz-input formControlName="password" id="password" placeholder="密码">
-                </nz-input-group>
-                <!-- <nz-form-explain *ngIf="validateForm.get('password').dirty && validateForm.get('password').errors">Please input your Password!</nz-form-explain> -->
-              </nz-form-control>
-            </nz-form-item>
+  <nz-card nzTitle="{{'Login In' | translate}}">
+    <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+      <nz-form-item>
+        <nz-form-control>
+          <nz-input-group nzPrefixIcon="anticon anticon-user">
+            <input type="text" nz-input formControlName="userName" id="userName" placeholder="用户名">
+          </nz-input-group>
+          <!-- <nz-form-explain *ngIf="validateForm.get('userName').dirty && validateForm.get('userName').errors">Please input your username!</nz-form-explain> -->
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control>
+          <nz-input-group nzPrefixIcon="anticon anticon-lock">
+            <input type="password" nz-input formControlName="password" id="password" placeholder="密码">
+          </nz-input-group>
+          <!-- <nz-form-explain *ngIf="validateForm.get('password').dirty && validateForm.get('password').errors">Please input your Password!</nz-form-explain> -->
+        </nz-form-control>
+      </nz-form-item>
 
-            <nz-form-item>
-              <nz-form-control>
-                  <div nz-row [nzGutter]="8">
-                    <div nz-col [nzSpan]="12">
-                      <input nz-input formControlName="captcha" placeholder="验证码" id="captcha">
-                    </div>
-                    <div nz-col [nzSpan]="12" (click)="getCaptcha()">
-                      <div class="captcha-img">
-                          <img src="/assets/lib/imgs/test/yzm.jpg" alt="">
-                      </div>
-                    </div>
-                  </div>
-                  <nz-form-explain class="danger" *ngIf="isError">{{toastMsg}}</nz-form-explain>
-              </nz-form-control>
-            </nz-form-item>
-
-            <nz-form-item>
-              <nz-form-control>
-                <label nz-checkbox formControlName="remember">
-                  <span>记住密码</span>
-                </label>
-                <button nz-button class="login-form-button" [nzType]="'primary'">{{"Login In" | translate}}</button>
-                <br>
-                <a class="login-form-forgot fr">忘记密码?</a>
-              </nz-form-control>
-            </nz-form-item>
-          </form>
-          <div class="btn-group">
-            <div class="reg-btn">
-              <button nz-button nzType="default" [nzSize]="small">个人/企业注册</button>
+      <nz-form-item>
+        <nz-form-control>
+          <div nz-row [nzGutter]="8">
+            <div nz-col [nzSpan]="12">
+              <input nz-input formControlName="captcha" placeholder="验证码" id="captcha">
             </div>
-            <div class="reg-btn">
-              <button nz-button nzType="default" [nzSize]="small">QQ/微信登录</button>
+            <div nz-col [nzSpan]="12" (click)="getCaptcha()">
+              <div class="captcha-img">
+                <img src="/assets/lib/imgs/test/yzm.jpg" alt="">
+              </div>
             </div>
           </div>
-    </nz-card>
+          <nz-form-explain class="danger" *ngIf="isError">{{toastMsg}}</nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control>
+          <label nz-checkbox formControlName="remember">
+            <span>记住密码</span>
+          </label>
+          <button nz-button class="login-form-button" [nzType]="'primary'">{{"Login In" | translate}}</button>
+          <br>
+          <a class="login-form-forgot fr">忘记密码?</a>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+    <div class="btn-group">
+      <div class="reg-btn">
+        <button nz-button nzType="default" [nzSize]="small">个人/企业注册</button>
+      </div>
+      <div class="reg-btn">
+        <button nz-button nzType="default" [nzSize]="small">QQ/微信登录</button>
+      </div>
+    </div>
+  </nz-card>
 </div>

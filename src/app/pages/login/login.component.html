@@ -1,9 +1,54 @@
-<p>
-    {{'Login In' | translate }} works!
-</p>
-<div class="form">
-    <dynamic-form 
-        [config]="config"
-        (submitted)="formSubmitted($event)">
-    </dynamic-form>
+<app-header-top></app-header-top>
+<div class="content">
+    <div class="row">
+        <div class="login fr">
+            <div class="login-title text-center light">会员登录</div>
+            <div class="login-form">
+                <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+                    <nz-form-item>
+                        <nz-form-control>
+                            <nz-input-group nzPrefixIcon="anticon anticon-user">
+                                <input type="text" nz-input formControlName="userName" placeholder="输入用户名/手机号码/邮箱">
+                            </nz-input-group>
+                            <nz-form-explain *ngIf="validateForm.get('userName').dirty && validateForm.get('userName').errors">请填写您用户名!</nz-form-explain>
+                        </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                        <nz-form-control>
+                            <nz-input-group nzPrefixIcon="anticon anticon-lock">
+                                <input type="password" nz-input formControlName="password" placeholder="输入用户密码">
+                            </nz-input-group>
+                            <nz-form-explain *ngIf="validateForm.get('password').dirty && validateForm.get('password').errors">请填写您的密码!</nz-form-explain>
+                        </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                        <nz-form-control>
+                            <div nz-row [nzGutter]="8">
+                                <div nz-col [nzSpan]="16">
+                                    <input nz-input formControlName="captcha" placeholder="输入验证码" id="captcha">
+                                </div>
+                                <div nz-col [nzSpan]="8" (click)="getCaptcha()">
+                                    <div class="captcha-img">
+                                        <img src="/assets/lib/imgs/test/yzm.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <nz-form-explain *ngIf="validateForm.get('captcha').dirty && validateForm.get('captcha').errors">请填写验证码!</nz-form-explain>
+                        </nz-form-control>
+                    </nz-form-item>
+
+                    <nz-form-item>
+                        <nz-form-control>
+                            <label nz-checkbox formControlName="remember" class="light">
+                                <span>记住账号密码</span>
+                            </label>
+                            <a class="login-form-forgot light">忘记密码?</a>
+                            <button nz-button class="login-form-button" [nzType]="'primary'">登录</button>
+                        </nz-form-control>
+                    </nz-form-item>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
+<app-footer></app-footer>

@@ -1,0 +1,63 @@
+<div class="head-top">
+  <div class="row clearfix">
+    <div class="fl back">
+      <a [routerLink]="['/web/home']" class="primary">
+        <i class="anticon anticon-home"></i>返回网站首页&gt;&gt;
+      </a>
+    </div>
+    <div class="head-top-nav fr">
+        <ul nz-menu [nzMode]="'horizontal'">
+            <li nz-submenu>
+              <span title>网站导航</span>
+              <ul>
+                  <li nz-menu-item>Option 5</li>
+                  <li nz-menu-item>Option 6</li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="head-top-register fr">
+        <ul nz-menu [nzMode]="'horizontal'">
+            <li nz-submenu>
+              <span title>用户注册</span>
+              <ul>
+                  <li nz-menu-item><a [routerLink]="['/register/userAccount']">个人注册</a></li>
+                  <li nz-menu-item><a [routerLink]="['/register/companyAccount']">企业注册</a></li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="head-top-login fr">
+      <div class="login-box clearfix">
+        <a class="fl" href="javascritp:;">
+          <span class="qq_bg icon fl"></span>
+          <span class="fl">{{ 'QQ' | translate }}</span>
+        </a>
+        <a class="fl" href="javascritp:;">
+          <span class="wechat_bg icon fl"></span>
+          <span class="fl">{{ 'wechat' | translate }}</span>
+        </a>
+        <a class="fl" href="javascritp:;">
+          <span>{{ "Login In" | translate}}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-primary head-top-border-bottom"></div>
+</div>
+<div class="head-bottom">
+  <div class="row clearfix">
+    <div class="logo fl">
+      <h1><a [routerLink]="['/']"><img src="/assets/lib/imgs/logo.png" alt="恒信人力资源"></a></h1>
+    </div>
+    <!-- 作出判断，如果没有电话号码，则不显示该部分数据 -->
+    <div class="link-phone fr">
+      <div class="phone-img"><img src="/assets/lib/imgs/test/register_phone_icon.png" alt="phone"></div>
+      <div class="phone-number">
+        <p>028-86519963</p>
+        <p>028-86519963</p>
+      </div>
+    </div>
+  </div>
+</div>
