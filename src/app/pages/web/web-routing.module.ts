@@ -4,7 +4,6 @@ import { WebComponent } from './web.component';
 
 
 const routes: Routes = [
-  // { path: '', redirectTo: 'index', pathMatch: 'full'},
   {
     path: '', component: WebComponent,
     children: [

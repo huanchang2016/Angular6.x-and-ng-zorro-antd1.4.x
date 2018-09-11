@@ -1,0 +1,30 @@
+.job-info {
+    .job-info-content {
+        padding: 25px 0;
+        h3 {
+            font-size: 26px;
+        }
+        p {
+            line-height: 30px;
+            font-size: 16px;
+        }
+    }
+}
+.spaceHeight {
+    width: 850px;
+    height: 24px;
+    margin-bottom: 30px;
+    background-color: #ddd;
+}
+.resume-info {
+    .resume-info-content {
+        padding: 25px 0;
+        .resume {
+            line-height: 30px;
+            font-size: 14px;
+            .default {
+                color: #2285c8;
+            }
+        }
+    }
+}

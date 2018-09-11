@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { HttpRequestService } from '../../../core/http-request/http-request.service';
+import { ApiData } from '../../../../data/interface.class';
 
 @Component({
   selector: 'app-user-account',
@@ -10,24 +12,45 @@ export class UserAccountComponent implements OnInit {
   validateForm: FormGroup;
   public currentSteps:number = 0;
   public passwordType:string = 'password';
+  public captchaSrc:string = '';
 
-  constructor(private fb: FormBuilder) {
-  }
+  constructor(
+    private fb: FormBuilder,
+    private httpRequest: HttpRequestService,
+  ) { }
 
   ngOnInit(): void {
     this.validateForm = this.fb.group({
       username            : [ null, [ Validators.required ] ],
       password         : [ null, [ Validators.required, Validators.minLength(6), Validators.maxLength(16) ] ],
-      confirmed_password    : [ null, [ Validators.required, this.confirmationValidator ] ],
+      password_confirmed    : [ null, [ Validators.required, this.confirmationValidator ] ],
       captcha          : [ null, [ Validators.required ] ],
       agree: [ false, Validators.required ]
     });
+    this.changeCaptchImage();
   }
 
   submitForm(): void {
     for (const i in this.validateForm.controls) {
       this.validateForm.controls[ i ].markAsDirty();
       this.validateForm.controls[ i ].updateValueAndValidity();
+    }
+    if(this.validateForm.status === "VALID") {
+      let formValue = this.validateForm.value;
+      let option = {
+        username: formValue.username,
+        password: formValue.password,
+        password_confirmation: formValue.password_confirmed,
+        captcha: formValue.captcha
+      }
+      this.httpRequest.post('/api/reg/username', option).subscribe((res:ApiData) => {
+        console.log(res);
+        if(res.code === 1){
+          
+        }else {
+
+        }
+      })
     }
 
   }
@@ -53,7 +76,7 @@ export class UserAccountComponent implements OnInit {
       }
     }
     /** wait for refresh value */
-    Promise.resolve().then(() => this.validateForm.controls.confirmed_password.updateValueAndValidity());
+    Promise.resolve().then(() => this.validateForm.controls.password_confirmed.updateValueAndValidity());
   }
 
   // 设置密码是否可见
@@ -77,6 +100,13 @@ export class UserAccountComponent implements OnInit {
   }
 
   changeCaptchImage() {
-    console.log('change captch');
+    this.httpRequest.get('/api/get_captcha').subscribe((res:ApiData) => {
+      console.log(res);
+      if(res.code === 1){
+        this.captchaSrc = res.data;
+      }else {
+        this.httpRequest.showMessage('error', res.msg);
+      }
+    })
   }
 }

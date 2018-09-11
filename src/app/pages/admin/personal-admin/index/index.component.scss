@@ -1,0 +1,57 @@
+.content {
+    margin-top: 2px;
+    padding-bottom: 50px;
+    background-color: #f1eff0;
+    .sildebar {
+        width: 250px;
+        background-color: #ddd;
+        border-bottom: 2px solid #cb6e21;
+        .sidebar-header {
+            height: 250px;
+            overflow: hidden;
+            padding-top: 30px;
+            .user-photo {
+                width: 96px;
+                height: 96px;
+                margin: 0 auto;
+                overflow: hidden;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+                img {
+                    width: 100%;
+                }
+            }
+            .user-phone, .user-link {
+                line-height: 28px;
+            }
+            .user-link {
+                .link {
+                    font-size: 16px;
+                    span {
+                        margin-right: 10px;
+                    }
+                }
+            }
+            .user-safe {
+                line-height: 30px;
+                margin-top: 10px;
+                p {
+                    span {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .router-content {
+        width: 950px;
+        padding: 30px 0 30px 50px;
+        background-color: #fff;
+    }
+    .checkedActive {
+        color: #2086c8;
+    }
+}

@@ -1,0 +1,10 @@
+<ul class="admin-sidebar-menu" nz-menu [nzMode]="'inline'" *ngIf="sideMenu.length != 0">
+  <li nz-submenu nzOpen *ngFor="let menu of sideMenu">
+    <span title><i [class]="menu.titleIcon"></i><span class="nav-text">{{menu.title}}</span></span>
+    <ul>
+      <li *ngFor="let subMenu of menu.subMenu" nz-menu-item routerLinkActive="ant-menu-item-selected ant-menu-submenu-selected" >
+        <a [routerLink]="[subMenu.path]">{{subMenu.subTitle}}</a>
+      </li>
+    </ul>
+  </li>
+</ul>

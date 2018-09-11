@@ -1,0 +1,26 @@
+ul {
+    background-color: #ddd;
+    border-top: 1px solid #c9c9c9;
+}
+
+:host ::ng-deep .admin-sidebar-menu {
+    .ant-menu-item {
+        margin-bottom: 0;
+    }
+    .ant-menu-submenu-title {
+        font-size: 16px;
+        color: #000;
+        font-weight: 600;
+    }
+    .ant-menu-item-selected {
+        background-color: #fff;
+    }
+    .ant-menu-item:after {
+        left: 0;
+        right: 100%;
+        border-color: #cb6f26;
+    }
+    &>li>.ng-star-inserted {
+        border-bottom: 1px solid #c9c9c9;
+    }
+}

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NzButtonModule, NzCardModule, NzInputModule, NzSelectModule, NzMenuModule, NzBackTopModule, NzCarouselModule, NzFormModule, NzCheckboxModule, NzGridModule, NzTabsModule, NzRadioModule, NzCascaderModule, NzDatePickerModule, NzTimePickerModule, NzInputNumberModule, NzUploadModule, NzModalModule, NzToolTipModule, NzStepsModule } from 'ng-zorro-antd';
+import { NzButtonModule, NzCardModule, NzInputModule, NzSelectModule, NzMenuModule, NzBackTopModule, NzCarouselModule, NzFormModule, NzCheckboxModule, NzGridModule, NzTabsModule, NzRadioModule, NzCascaderModule, NzDatePickerModule, NzTimePickerModule, NzInputNumberModule, NzUploadModule, NzModalModule, NzToolTipModule, NzStepsModule, } from 'ng-zorro-antd';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
@@ -22,6 +22,9 @@ import { NavbarComponent } from './component/navbar/navbar.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { LoginComponent } from './component/login/login.component';
 import { HeaderTopComponent } from './component/header-top/header-top.component';
+import { AdminTopComponent } from './component/admin-top/admin-top.component';
+import { AdminSidebarComponent } from './component/admin-sidebar/admin-sidebar.component';
+import { TabTitleComponent } from './component/tab-title/tab-title.component';
 
 const CORECOMPONENT = [
   LangComponent,
@@ -29,7 +32,10 @@ const CORECOMPONENT = [
   HeaderComponent,
   NavbarComponent,
   FooterComponent,
-  HeaderTopComponent
+  HeaderTopComponent,
+  AdminTopComponent,
+  AdminSidebarComponent,
+  TabTitleComponent
 ];
 
 const _NZMODULEARRAY = [

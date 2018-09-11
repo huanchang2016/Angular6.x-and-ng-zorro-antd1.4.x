@@ -1,0 +1,38 @@
+<div class="top">
+    <app-admin-top></app-admin-top>
+</div>
+<div class="content">
+    <div class="row clearfix">
+        <div class="sildebar fl">
+            <div class="sidebar-header text-center">
+                <div class="user-photo">
+                    <img src="/assets/lib/imgs/test/user-photo.jpg" alt="用户姓名">
+                </div>
+                <p class="user-phone">181****4149</p>
+                <div class="user-link">
+                    <p class="link">
+                        <span class="checkedActive"><i class="anticon anticon-mobile"></i></span>
+                        <span class="checkedActive"><i class="anticon anticon-user"></i></span>
+                        <span><i class="anticon anticon-mail"></i></span>
+                    </p>
+                </div>
+                <div class="user-safe">
+                    <p>
+                        <span>安全等级:</span>
+                        <span class="warning">中</span>
+                        <a class="checkedActive" href="javascript:;" (click)="updateAccountSafeGrade()">【提升】</a>
+                    </p>
+                </div>
+            </div>
+            <div class="sidebar-menu">
+                <app-admin-sidebar [adminSideMenu]="adminSideMenu"></app-admin-sidebar>
+            </div>
+        </div>
+        <div class="router-content fr">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <app-footer></app-footer>
+</div>
