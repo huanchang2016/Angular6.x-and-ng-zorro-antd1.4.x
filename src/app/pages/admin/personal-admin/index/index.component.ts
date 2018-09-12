@@ -13,12 +13,18 @@ const sideMenu = [
   },
   {
     title: '简历管理',
-    titleIcon: 'anticon anticon-user',
+    titleIcon: 'anticon anticon-profile',
     subMenu: [
-      { subTitle: '查看简历', path: './home' },
-      { subTitle: '创建简历', path: './info' },
-      { subTitle: '修改简历', path: './password' },
-      { subTitle: '隐私设置', path: './account' }
+      { subTitle: '我的简历', path: './resumes' },
+      { subTitle: '隐私设置', path: './privacySettings' }
+    ]
+  },
+  {
+    title: '求职管理',
+    titleIcon: 'anticon anticon-table',
+    subMenu: [
+      { subTitle: '被邀请面试记录', path: './interviewRecords' },
+      { subTitle: '简历浏览记录', path: './resumeRecords'}
     ]
   }
 ];

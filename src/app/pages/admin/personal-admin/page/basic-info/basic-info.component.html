@@ -1,3 +1,36 @@
-<p>
-  basic-info works!
-</p>
+<div class="basic">
+  <div class="basic-title">
+    <app-tab-title [Title]="'个人基本资料'"></app-tab-title>
+  </div>
+  <div class="basic-form">
+    <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()" class="form">
+      <nz-form-item>
+        <nz-form-label [nzSpan]="4" nzRequired nzFor="email">E-mail</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <input nz-input formControlName="email" id="email">
+          <nz-form-explain *ngIf="validateForm.get('email').dirty && validateForm.get('email').errors">The input is not valid
+            E-mail!</nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item class="photo">
+        <nz-form-control>
+          <input nz-input formControlName="photo" id="photo">
+          <nz-form-explain *ngIf="validateForm.get('photo').dirty && validateForm.get('photo').errors">The input is not valid
+              photo!</nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label  [nzSpan]="4" nzFor="website" nzRequired>Website</nz-form-label>
+        <nz-form-control [nzSm]="14">
+          <input nz-input id="website" formControlName="website" placeholder="website">
+          <nz-form-explain *ngIf="validateForm.get('website').dirty && validateForm.get('website').errors">Please input website!</nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item nz-row style="margin-bottom:8px;">
+        <nz-form-control [nzSpan]="14" [nzOffset]="4">
+          <button nz-button nzType="primary">Register</button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </div>
+</div>

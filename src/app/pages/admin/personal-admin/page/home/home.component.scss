@@ -1,6 +1,5 @@
 .job-info {
     .job-info-content {
-        padding: 25px 0;
         h3 {
             font-size: 26px;
         }
@@ -18,7 +17,6 @@
 }
 .resume-info {
     .resume-info-content {
-        padding: 25px 0;
         .resume {
             line-height: 30px;
             font-size: 14px;
@@ -26,5 +24,35 @@
                 color: #2285c8;
             }
         }
+        .resume-oper {
+            width: 200px;
+            margin-right: 50px;
+        }
+    }
+}
+.home-padding { 
+    padding: 25px 0;
+}
+.recommond-position {
+    .position-content {
+        .position-info {
+            margin: 10px 0;
+            .position-name {
+                font-size: 16px;
+                a {
+                    color: #000;
+                }
+            }
+            .company-name {
+                a {
+                    color: #000;
+                }
+            }
+        }
+    }
+}
+:host ::ng-deep nz-card {
+    .ant-card-body {
+        padding: 10px 20px;
     }
 }

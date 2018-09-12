@@ -3,21 +3,27 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
   selector: 'app-tab-title',
   template: `
-    <div class="title">
-      <h2 class="text-center bg-primary light">{{title}}</h2>
+    <div class="tab-title">
+      <div class="title"><h2 class="text-center bg-primary light fl">{{title}}</h2></div>
       <div class="title-border-bottom bg-primary"></div>
     </div>
   `,
   styles: [`
+  .tab-title {
+    height: 42px;
+  }
+  .title {
+    height: 40px;
+  }
   .title  h2 {
-      width: 100px;
-      height: 40px;
+      padding: 0 20px;
       line-height: 40px;
       font-size: 18px;
       overflow: hidden;
   }
   .title-border-bottom {
       height: 2px;
+      width: 100%;
   }
   `]
 })
