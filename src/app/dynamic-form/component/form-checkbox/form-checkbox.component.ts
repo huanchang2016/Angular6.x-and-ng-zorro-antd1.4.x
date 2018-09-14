@@ -9,10 +9,23 @@ import { FormGroup } from '@angular/forms';
 export class FormCheckboxComponent implements OnInit {
   config;
   group: FormGroup;
+
+  public checkboxOption: Array<any> = [];
+
   constructor() { }
 
   ngOnInit() {
-    console.log(this.config.name);
+    (this.config.config.option).forEach(el => {
+      let obj = {
+        label: el.name,
+        value: el.value,
+        checked: el.checked ? el.checked : false
+      };
+      this.checkboxOption.push(obj);
+    });
   }
 
+  checkedChange(value: object[]): void {
+    this.group.value[this.config.field_name] = value;
+  }
 }

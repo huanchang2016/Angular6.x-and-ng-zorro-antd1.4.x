@@ -4,40 +4,41 @@ import { DynamicService } from './service/dynamic.service';
 import { DynamicFieldDirective } from './dynamic-field.directive';
 
 import { DynamicFormComponent } from './component/dynamic-form/dynamic-form.component';
-import { FormButtonComponent } from './component/form-button/form-button.component';
 import { FormTextareaComponent } from './component/form-textarea/form-textarea.component';
 import { FormRadioComponent } from './component/form-radio/form-radio.component';
 import { FormCheckboxComponent } from './component/form-checkbox/form-checkbox.component';
 import { FormSelectComponent } from './component/form-select/form-select.component';
 import { FormDatepickerComponent } from './component/form-datepicker/form-datepicker.component';
-import { FormTimepickerComponent } from './component/form-timepicker/form-timepicker.component';
 import { FormCascaderComponent } from './component/form-cascader/form-cascader.component';
 import { FormInputTextComponent } from './component/form-input-text/form-input-text.component';
-import { FormInputNumberComponent } from './component/form-input-number/form-input-number.component';
 import { FormEditorComponent } from './component/form-editor/form-editor.component';
 import { FormFileComponent } from './component/form-file/form-file.component';
 import { FormMultipleFileComponent } from './component/form-multiple-file/form-multiple-file.component';
 import { FormImageComponent } from './component/form-image/form-image.component';
 import { FormMultipleImagesComponent } from './component/form-multiple-images/form-multiple-images.component';
-import { FormDateMonthPickerComponent } from './component/form-date-month-picker/form-date-month-picker.component';
+import { FormMultipleSelectComponent } from './component/form-multiple-select/form-multiple-select.component';
+import { FormGroupComponent } from './component/form-group/form-group.component';
+import { CreatFormComponent } from './component/form-group/creat-form/creat-form.component';
+import { DynamicGroupComponent } from './component/form-group/dynamic-group/dynamic-group.component';
 
 
 const DYNAMICCOMPONENT = [
-  FormButtonComponent,
   FormTextareaComponent,
   FormRadioComponent,
   FormCheckboxComponent,
   FormSelectComponent,
+  FormMultipleSelectComponent,
   FormDatepickerComponent,
-  FormTimepickerComponent,
   FormCascaderComponent,
   FormInputTextComponent,
-  FormInputNumberComponent,
   FormEditorComponent,
   FormFileComponent,
   FormMultipleFileComponent,
   FormImageComponent,
-  FormMultipleImagesComponent
+  FormMultipleImagesComponent,
+  FormGroupComponent,
+  CreatFormComponent,
+  DynamicGroupComponent
 ];
 
 @NgModule({
@@ -48,7 +49,6 @@ const DYNAMICCOMPONENT = [
     DynamicFieldDirective,
     DynamicFormComponent,
     ...DYNAMICCOMPONENT,
-    FormDateMonthPickerComponent,
   ],
   entryComponents: [
     ...DYNAMICCOMPONENT,

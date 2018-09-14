@@ -21,12 +21,12 @@
       <nz-form-item>
         <nz-form-control>
           <div nz-row [nzGutter]="8">
-            <div nz-col [nzSpan]="12">
+            <div nz-col [nzSpan]="16">
               <input nz-input formControlName="captcha" placeholder="验证码" id="captcha">
             </div>
-            <div nz-col [nzSpan]="12" (click)="getCaptcha()">
+            <div nz-col [nzSpan]="8" (click)="getCaptcha()">
               <div class="captcha-img">
-                <img src="/assets/lib/imgs/test/yzm.jpg" alt="">
+                  <img [src]="'http://localhost/captcha/' + captchaSrc.url" alt="">
               </div>
             </div>
           </div>

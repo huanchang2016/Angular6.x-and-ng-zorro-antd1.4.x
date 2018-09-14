@@ -1,0 +1,89 @@
+.privacy-settings {
+    .privacy-title {
+        position: relative;
+        left:0;
+        top: 0;
+        .privacy-notice {
+            line-height: 40px;
+            position: absolute;
+            left: 130px;
+            top: 0;
+        }
+    }
+    .privacy-content {
+        padding: 30px 10px;
+        .privacy-content-setting {
+            .privacy-setting-type {
+                height: 125px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid #ddd;
+                span {
+                    display: block;
+                }
+                .setting-img {
+                    width: 80px;
+                    height: 70px;
+                    background: url('/assets/lib/imgs/lock.png') no-repeat;
+                }
+                .setting-text {
+                    width: 120px;
+                    padding-top: 32px;
+                    font-size: 18px;
+                    color: #c9c9c9;
+                    margin-left: 10px;
+                }
+                .open-all {
+                    background-position: -10px -103px;
+                }
+                .open-admin {
+                    background-position: -105px -103px;
+                }
+                .open-none {
+                    background-position: -205px -103px;
+                }
+                &:hover {
+                    cursor: pointer;
+                    border-color: #2186c9;
+                    .setting-img {
+                        background-position-y: -10px;
+                    }
+                    .setting-text {
+                        color: #2186c9;
+                    }
+                }
+            }
+            .open-status {
+                border-color: #2186c9;
+                .setting-img {
+                    background-position-y: -10px;
+                }
+                .setting-text {
+                    color: #2186c9;
+                }
+            }
+        }
+    }
+    .privacy-footer {
+        padding: 0 10px;
+        color: #000;
+        .privacy-footer-title {
+            line-height: 40px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .privacy-footer-content {
+            margin-top: 10px;
+            h5 {
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 30px;
+            }
+            p {
+                font-size: 12px;
+                line-height: 24px;
+            }
+        }
+    }
+}

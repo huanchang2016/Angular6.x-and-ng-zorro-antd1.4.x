@@ -1,6 +1,6 @@
-<nz-form-item [formGroup]="group">
-  <nz-form-label [nzSm]="6" [nzXs]="24" [nzRequired] [nzFor]="config.name">{{ config.label }}</nz-form-label>
+<nz-form-item *ngIf="checkboxOption.length != 0">
+  <nz-form-label [nzSm]="6" [nzXs]="24" [nzRequired] [nzFor]="config.field_name">{{ config.name }}</nz-form-label>
   <nz-form-control [nzSm]="14" [nzXs]="24">
-      <nz-checkbox-group  [formControlName]="config.name"></nz-checkbox-group>
+    <nz-checkbox-group [(ngModel)]="checkboxOption" (ngModelChange)="checkedChange(checkboxOption)"></nz-checkbox-group>
   </nz-form-control>
 </nz-form-item>

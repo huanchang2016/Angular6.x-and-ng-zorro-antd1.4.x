@@ -1,3 +1,43 @@
-<p>
-  settings works!
-</p>
+<div class="privacy-settings">
+  <div class="privacy-title">
+      <app-tab-title [Title]="'隐私设置'"></app-tab-title>
+      <p class="danger privacy-notice">隐私设置为公开时，单位才能搜索到您的简历</p>
+  </div>
+  <div class="privacy-content">
+    <div nz-row [nzGutter]="16">
+      <div nz-col [nzSpan]="8" class="privacy-content-setting">
+        <div class="privacy-setting-type open-status">
+          <span class="setting-img open-all text-center"></span>
+          <span class="setting-text">对所有公开</span>
+        </div>
+      </div>
+      <div nz-col [nzSpan]="8" class="privacy-content-setting">
+        <div class="privacy-setting-type">
+          <span class="setting-img open-admin text-center"></span>
+          <span class="setting-text">对恒信公开</span>
+        </div>
+      </div>
+      <div nz-col [nzSpan]="8" class="privacy-content-setting">
+        <div class="privacy-setting-type">
+          <span class="setting-img open-none text-center"></span>
+          <span class="setting-text">完全保密</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="privacy-footer">
+    <h4 class="privacy-footer-title">隐私介绍</h4>
+    <div class="privacy-footer-content">
+      <h5>对所有人公开:</h5>
+      <p>允许恒信的专业人员及所有通过恒信审核的公司查看你的简历。你将会获得最全面的求职服务——职位推荐、面试邀约和求职秘籍等。如不想被某家公司查看，请设置屏蔽公司。</p>
+    </div>
+    <div class="privacy-footer-content">
+      <h5>对恒信公开:</h5>
+      <p>只允许恒信的专业人员及认证猎头人士查看你的简历。恒信的专业人员也会不定期的与你联系，为你提供符合你的职位发展机会。</p>
+    </div>
+    <div class="privacy-footer-content">
+      <h5>完全保密:</h5>
+      <p>不允许任何人员或公司查看你的简历，个人信息完全保密， 除非你主动投递职位。但如果你希望能接受面试邀约或职位推荐，我们建议你更改此选项，将简历公开度设定为“对所有公开”。</p>
+    </div>
+  </div>
+</div>

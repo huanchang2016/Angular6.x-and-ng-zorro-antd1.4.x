@@ -1,0 +1,116 @@
+.account {
+    .refer-notice {
+        line-height: 50px;
+        background-color: #ddd;
+        font-size: 14px;
+        margin-right: 20px;
+        margin-bottom: 15px;
+    }
+    .account-info {
+        margin-bottom: 40px;
+        p {
+            line-height: 34px;
+            font-size: 14px;
+            color: #000;
+        }
+    }
+    .account-title {
+        position: relative;
+        left: 0;
+        top: 0;
+        .account-setting-finish {
+            width: 80px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 14px;
+            color: #000;
+            overflow: hidden;
+            position: absolute;
+            left: 130px;
+            top: 0;
+        }
+    }
+    .account-setting-list {
+        padding: 20px 20px 0 30px;
+        .settings {
+            height: 50px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            .setting-img {
+                width: 60px;
+                margin-right: 20px;
+                i {
+                    font-size: 50px;
+                    &.icon-message {
+                        font-size: 38px;
+                    }
+                }
+            }
+            .setting-content {
+                h3 {
+                    font-size: 18px;
+                    color: #000;
+                    line-height: 30px;
+                    font-weight: 600;
+                    span {
+                        font-weight: 100;
+                        font-size: 14px;
+                        margin-left: 15px;
+                    }
+                }
+                p {
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: #8a8a8a;
+                }
+            }
+        }
+        .social-account {
+            &>div {
+                width: 220px;
+                height: 98px;
+                overflow: hidden;
+                .social-account-box {
+                    .bg-default {
+                        background-color: #c9c9c9;
+                    }
+                    .social-account-img {
+                        width: 98px;
+                        height: 98px;
+                        margin-right: 20px;
+                        border-radius: 10px;
+                        -webkit-border-radius: 10px;
+                        -moz-border-radius: 10px;
+                        -ms-border-radius: 10px;
+                        -o-border-radius: 10px;
+                        i {
+                            margin-top: 17px;
+                            color: #fff;
+                            font-size: 64px;
+                        }
+                    }
+                    .social-account-content {
+                        h3 {
+                            line-height: 36px;
+                            font-weight: 600;
+                            font-size: 14px;
+                        }
+                        p {
+                            font-size: 12px;
+                            line-height: 30px;
+                            span {
+                                padding: 2px 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+:host ::ng-deep .setting-oper {
+    .ant-btn {
+        width: 88px;
+    }
+}

@@ -19,9 +19,8 @@ export class FormFileComponent implements OnInit {
 
   beforeUpload = (file: UploadFile): boolean => {
     console.log(file);
-    let uploadFile = file;
-    this._file[0] = uploadFile;
-    this.group.value[this.config.name] = uploadFile;
+    this._file[0] = file;
+    this.group.value[this.config.field_name] = file;
     return false;
   }
 }

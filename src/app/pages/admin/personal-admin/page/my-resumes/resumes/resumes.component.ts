@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResumesComponent implements OnInit {
 
+  public isResume:boolean = false;
+  
   constructor() { }
 
   ngOnInit() {

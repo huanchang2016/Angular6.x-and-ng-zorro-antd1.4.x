@@ -1,3 +1,18 @@
-<p>
-  resumes works!
-</p>
+<div class="my-resumes">
+  <div class="title">
+    <app-tab-title [Title]="'我的简历'"></app-tab-title>
+    <!-- 如果没有简历，则显示创建简历 -->
+    <div class="creat-resume" *ngIf="!isResume">
+      <span class="danger">您暂时还没有创建默认简历！</span>
+      <a [routerLink]="['./add']">
+        <button nz-button nzType="primary">创建简历</button>
+      </a>
+    </div>
+  </div>
+  <div class="my-resumes-content">
+    <!-- 如果有简历，则显示简历列表 -->
+    <div *ngIf="isResume">
+      resume list
+    </div>
+  </div>
+</div>

@@ -1,6 +1,9 @@
 :host ::ng-deep .avatar-uploader>.ant-upload {
-    width: 128px;
-    height: 128px;
+    img {
+        max-width: 128px;
+        max-height: 128px;
+    }
+    
 }
 
 :host ::ng-deep .ant-upload-select-picture-card i {

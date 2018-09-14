@@ -19,6 +19,32 @@
                 height: 30px;
                 padding: 8px 10px;
             }
+            .register {
+                margin-right: 15px;
+                padding: 0 10px;
+                position: relative;
+                left: 0;
+                top: 0;
+                .register-box {
+                    display: none;
+                    background-color: #ddd;
+                    position: absolute;
+                    left: 0;
+                    top: 36px;
+                    width: 100%;
+                    z-index: 3;
+                    line-height: 30px;
+                    padding: 10px 0;
+                    p:hover {
+                        background-color: #fff;
+                    }
+                }
+                &:hover {
+                    .register-box {
+                        display: block;
+                    }
+                }
+            }
         }
     }
     .head_bottom {

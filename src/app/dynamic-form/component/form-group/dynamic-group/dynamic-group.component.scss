@@ -1,0 +1,25 @@
+.creat-form {
+    margin-bottom: 30px;
+    .title {
+        position: relative;
+        left: 0;
+        top: 0;
+        margin-bottom: 20px;
+        .group-notice {
+            position: absolute;
+            right: 20px;
+            top: 0;
+            line-height: 40px;
+            font-size: 14px;
+        }
+    }
+    form {
+        border-bottom: 1px solid;
+        .add-group {
+            margin: 0 20px;
+        }
+        .deleted-group {
+            margin-right: 20px;
+        }
+    }
+}

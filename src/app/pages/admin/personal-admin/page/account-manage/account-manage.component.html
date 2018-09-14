@@ -1,3 +1,104 @@
-<p>
-  account-manage works!
-</p>
+<div class="account">
+  <div class="refer-notice danger text-center">
+    完成身份认证才能创建简历。绑定手机号码、完成邮箱验证，可以增加求职反馈的及时性和准确性，从而提高求职成功率
+  </div>
+  <div class="account-info">
+    <p>登录用户名：<span class="danger">Wangweiwudi</span></p>
+    <p>上次登录时间：<span class="danger">2018-09-20 11:25:52</span></p>
+  </div>
+  <div class="account-title">
+    <app-tab-title [Title]="'账号绑定'"></app-tab-title>
+    <p class="account-setting-finish">
+      完成 <span class="danger">3/5</span>
+    </p>
+  </div>
+  <div class="account-setting-list">
+    <div class="settings idcard-setting clearfix">
+      <div class="fl setting-img text-center">
+          <i class="anticon anticon-idcard"></i>
+      </div>
+      <div class="setting-content fl">
+        <h3>身份认证</h3>
+        <p>身份认证增加单位对您的信任度</p>
+      </div>
+      <div class="setting-oper fr">
+        <button nz-button nzType="primary">未验证</button>
+      </div>
+    </div>
+
+    <div class="settings mail-setting clearfix">
+      <div class="fl setting-img text-center">
+          <i class="anticon anticon-mail"></i>
+      </div>
+      <div class="setting-content fl">
+        <h3>邮箱<span class="danger">ww@cdtfhr.com</span><span>未验证</span></h3>
+        <p>邮箱验证后，可以通过邮箱随时取回账户密码。</p>
+      </div>
+      <div class="setting-oper fr">
+        <button nz-button nzType="primary" (click)="creatBindEmailModal()">立即绑定</button>
+      </div>
+    </div>
+
+    <div class="settings mobile-setting clearfix">
+      <div class="fl setting-img text-center">
+          <i class="anticon anticon-mobile"></i>
+      </div>
+      <div class="setting-content fl">
+        <h3>手机<span class="danger">181****4149</span><span>已绑定</span></h3>
+        <p>绑定后可以使用该手机登录账号或找回密码</p>
+      </div>
+      <div class="setting-oper fr">
+        <button nz-button nzType="primary" class="bg-warning border-warning">更改绑定</button>
+      </div>
+    </div>
+
+    <div class="settings lock-setting clearfix">
+      <div class="fl setting-img text-center">
+          <i class="anticon anticon-lock"></i>
+      </div>
+      <div class="setting-content fl">
+        <h3>密码<span>已设置</span></h3>
+        <p>用户保护账号信息和登录安全</p>
+      </div>
+      <div class="setting-oper fr">
+        <a [routerLink]="['/userAdmin/password']"><button nz-button nzType="primary" class="bg-warning border-warning">更改密码</button></a>
+      </div>
+    </div>
+
+    <div class="settings social-setting clearfix">
+      <div class="fl setting-img text-center">
+          <i class="icon iconfont icon-message"></i>
+      </div>
+      <div class="setting-content fl">
+        <h3>社交账号</h3>
+        <p>用户保护账号信息和登录安全</p>
+      </div>
+    </div>
+    <div class="social-account clearfix">
+      <div class="qq-account fl">
+        <div class="social-account-box clearfix">
+          <div class="social-account-img text-center fl" [class.bg-warning]="true" [class.bg-default]="false">
+            <i class="anticon anticon-qq"></i>
+          </div>
+          <div class="social-account-content fl">
+            <h3>QQ</h3>
+            <p>已绑定</p>
+            <p class="social-account-oper"><span class="bg-warning light">解除绑定</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="wechat-account fl">
+          <div class="social-account-box clearfix">
+            <div class="social-account-img text-center fl" [class.bg-warning]="false" [class.bg-default]="true">
+              <i class="anticon anticon-wechat"></i>
+            </div>
+            <div class="social-account-content fl">
+              <h3>QQ</h3>
+              <p>已绑定</p>
+              <p class="social-account-oper"><span class="bg-primary light">立即绑定</span></p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

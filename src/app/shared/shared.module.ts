@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NzButtonModule, NzCardModule, NzInputModule, NzSelectModule, NzMenuModule, NzBackTopModule, NzCarouselModule, NzFormModule, NzCheckboxModule, NzGridModule, NzTabsModule, NzRadioModule, NzCascaderModule, NzDatePickerModule, NzTimePickerModule, NzInputNumberModule, NzUploadModule, NzModalModule, NzToolTipModule, NzStepsModule, } from 'ng-zorro-antd';
+import { NzButtonModule, NzCardModule, NzInputModule, NzSelectModule, NzMenuModule, NzBackTopModule, NzCarouselModule, NzFormModule, NzCheckboxModule, NzGridModule, NzTabsModule, NzRadioModule, NzCascaderModule, NzDatePickerModule, NzTimePickerModule, NzInputNumberModule, NzUploadModule, NzModalModule, NzToolTipModule, NzStepsModule, NzMessageModule, NzPopconfirmModule, } from 'ng-zorro-antd';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
@@ -25,6 +25,7 @@ import { HeaderTopComponent } from './component/header-top/header-top.component'
 import { AdminTopComponent } from './component/admin-top/admin-top.component';
 import { AdminSidebarComponent } from './component/admin-sidebar/admin-sidebar.component';
 import { TabTitleComponent } from './component/tab-title/tab-title.component';
+import { ChangePasswordComponent } from './component/change-password/change-password.component';
 
 const CORECOMPONENT = [
   LangComponent,
@@ -35,7 +36,8 @@ const CORECOMPONENT = [
   HeaderTopComponent,
   AdminTopComponent,
   AdminSidebarComponent,
-  TabTitleComponent
+  TabTitleComponent,
+  ChangePasswordComponent,
 ];
 
 const _NZMODULEARRAY = [
@@ -59,12 +61,15 @@ const _NZMODULEARRAY = [
   NzModalModule,
   NzToolTipModule,
   NzStepsModule,
+  NzMessageModule,
+  NzPopconfirmModule,
 ]
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule,
     CKEditorModule,
     ..._NZMODULEARRAY,

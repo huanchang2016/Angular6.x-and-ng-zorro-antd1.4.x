@@ -1,8 +1,8 @@
 <nz-form-item [formGroup]="group">
-  <nz-form-label [nzSm]="6" [nzXs]="24" [nzRequired] [nzFor]="config.name">{{ config.label }}</nz-form-label>
+  <nz-form-label [nzSm]="6" [nzXs]="24" [nzRequired] [nzFor]="config.field_name">{{ config.name }}</nz-form-label>
   <nz-form-control [nzSm]="14" [nzXs]="24">
-    <nz-select style="width: 200px;" [formControlName]="config.name" nzAllowClear nzPlaceHolder="{{ config.placeholder }}">
-      <nz-option *ngFor="let option of config.options" [nzValue]="option.value" [nzLabel]="option.label"></nz-option>
+    <nz-select [formControlName]="config.field_name" nzAllowClear nzPlaceHolder="{{ config.placeholder }}">
+      <nz-option *ngFor="let option of config.config.option" [nzValue]="option.value" [nzLabel]="option.name"></nz-option>
     </nz-select>
   </nz-form-control>
 </nz-form-item>

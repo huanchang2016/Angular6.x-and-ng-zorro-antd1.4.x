@@ -4,7 +4,13 @@
             <a herf="javascript:;" class="hover fl"><i class="anticon anticon-qq"></i> {{ "QQ" | translate}}</a>
             <a herf="javascript:;" class="hover fl"><i class="anticon anticon-wechat"></i> {{ "wechat" | translate}}</a>
             <a [routerLink]="['/login']" class="login hover fl"> {{ "Login In" | translate}}</a>
-            <a [routerLink]="['/register']" class="hover fl">{{ 'Register' | translate }}</a>
+            <div class="register text-center fl">
+                <span>用户注册 <i class="anticon anticon-caret-down"></i></span>
+                <div class="register-box">
+                    <p><a [routerLink]="['/register/userAccount']" class="hover">个人用户</a></p>
+                    <p><a [routerLink]="['/register/companyAccount']" class="hover">企业注册</a></p>
+                </div>
+            </div>
             <span class="hover fl">|</span>
             <a herf="javascript:;" class="hover fl"><i class="anticon anticon-phone"></i></a>
             <div class="hover fl top_phonenumber">

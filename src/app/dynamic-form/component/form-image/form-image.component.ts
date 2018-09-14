@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { UploadFile } from 'ng-zorro-antd';
 import { DynamicService } from '../../service/dynamic.service';
 
 @Component({
@@ -23,7 +22,6 @@ export class FormImageComponent implements OnInit {
   }
 
   beforeUpload = (file: File) => {
-    console.log(file.type);
     const isJPG = file.type.indexOf('image/') != -1;
     if (!isJPG) {
       this.dynamicService.showMessage('error', '只能上传图片格式的文件!');
@@ -33,13 +31,13 @@ export class FormImageComponent implements OnInit {
       this.dynamicService.showMessage('error', '上传图片不能超过2M!');
     }
 
-    this.group.value[this.config.name] = file;
+    this.group.value[this.config.field_name] = file;
+    console.log(this.group.value);
 
     this.getBase64(file, (img: string) => {
       this.loading = false;
       this.avatarUrl = img;
     });
-    
     return false;
   }
 

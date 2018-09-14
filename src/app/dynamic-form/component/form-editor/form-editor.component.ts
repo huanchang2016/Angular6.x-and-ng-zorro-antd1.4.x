@@ -14,10 +14,10 @@ export class FormEditorComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.content = this.config.vlaue || this.config.placeholder;
+    this.content = this.config.config.default_value || this.config.tips;
   }
 
   getMyEditorContent($event) {
-    this.group.value[this.config.name] = $event;
+    this.group.value[this.config.field_name] = $event;
   }
 }

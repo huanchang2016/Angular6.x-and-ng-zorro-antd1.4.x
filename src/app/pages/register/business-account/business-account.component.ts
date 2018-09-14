@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { HttpRequestService } from '../../../core/http-request/http-request.service';
+import { ApiData } from '../../../../data/interface.class';
 
 @Component({
   selector: 'app-business-account',
@@ -10,21 +12,25 @@ export class BusinessAccountComponent implements OnInit {
   validateForm: FormGroup;
   public currentSteps:number = 0;
   public passwordType:string = 'password';
+  public captchaSrc:string = '';
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private httpRequest: HttpRequestService,
+  ) {
   }
 
   ngOnInit(): void {
     this.validateForm = this.fb.group({
-      username            : [ null, [ Validators.required ] ],
-      password         : [ null, [ Validators.required, Validators.minLength(6), Validators.maxLength(16) ] ],
+      username              : [ null, [ Validators.required ] ],
+      password              : [ null, [ Validators.required, Validators.minLength(6) ] ],
       confirmed_password    : [ null, [ Validators.required, this.confirmationValidator ] ],
-      concat            : [ null, [ Validators.required ] ],
-      phone            : [ null, [ Validators.required ] ],
-      companyName            : [ null, [ Validators.required ] ],
-      companyAddress            : [ null, [ Validators.required ] ],
-      captcha          : [ null, [ Validators.required ] ],
-      agree: [ false, Validators.required ]
+      concat                : [ null, [ Validators.required ] ],
+      phone                 : [ null, [ Validators.required ] ],
+      companyName           : [ null, [ Validators.required ] ],
+      companyAddress        : [ null, [ Validators.required ] ],
+      captcha               : [ null, [ Validators.required ] ],
+      agree                 : [ false, Validators.required ]
     });
   }
 
@@ -32,6 +38,28 @@ export class BusinessAccountComponent implements OnInit {
     for (const i in this.validateForm.controls) {
       this.validateForm.controls[ i ].markAsDirty();
       this.validateForm.controls[ i ].updateValueAndValidity();
+    }
+    if(this.validateForm.status === "VALID" && this.validateForm.value.agree === true) {
+      let formValue = this.validateForm.value;
+      let option = {
+        username: formValue.username,
+        password: formValue.password,
+        password_confirmation: formValue.confirmed_password,
+        user_name: formValue.concat,
+        user_phone: formValue.phone,
+        company_name: formValue.companyName,
+        addr: formValue.companyAddress,
+        captcha: formValue.captcha
+      }
+
+      this.httpRequest.post('/api/reg/company', option).subscribe((res:ApiData) => {
+        if(res.code === 1){
+          this.httpRequest.showMessage('success', '注册成功');
+          this.httpRequest.navTo('/login');
+        }else {
+          this.httpRequest.showMessage('error', this.httpRequest.dealFailResponseData(res.data));
+        }
+      })
     }
 
   }
@@ -81,7 +109,16 @@ export class BusinessAccountComponent implements OnInit {
   }
 
   changeCaptchImage() {
-    console.log('change captch');
+    this.validateForm.patchValue({
+      captcha: ''
+    })
+    this.httpRequest.sendImageCaptcha().subscribe((res:ApiData) => {
+      if(res.code === 1){
+        this.captchaSrc = res.data;
+      }else {
+        this.httpRequest.showMessage('error', res.msg);
+      }
+    })
   }
 
 }

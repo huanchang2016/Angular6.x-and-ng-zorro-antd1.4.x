@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IndexService } from '../../service/index.service';
-import { HttpRequestService } from '../../../../../core/http-request/http-request.service';
+import { ApiData } from '../../../../../../data/interface.class';
 
 @ViewChild('input')
 
@@ -13,6 +13,7 @@ import { HttpRequestService } from '../../../../../core/http-request/http-reques
 export class BannerSideLoginComponent implements OnInit {
   validateForm: FormGroup;
   captcha:string = '';
+  public captchaSrc:string = '';
   // 显示提示信息 及提示信息内容
   isError:boolean = false;
   toastMsg: string = '';
@@ -25,11 +26,11 @@ export class BannerSideLoginComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    // private indexService: IndexService,
-    private httpRequest: HttpRequestService
+    private indexService: IndexService,
   ) { }
 
   ngOnInit(): void {
+    this.getCaptcha();
 
     this.validateForm = this.fb.group({
       userName: [ null, [ Validators.required, Validators.minLength(3) ] ],
@@ -38,8 +39,6 @@ export class BannerSideLoginComponent implements OnInit {
       remember: [ true ]
     });
 
-    this.validateForm.addControl('test', this.fb.control(''));
-    console.log(this.validateForm.value);
     this.validateForm.valueChanges.subscribe( () => {
       this.isError = !this.checkFormValue();
     })
@@ -62,18 +61,39 @@ export class BannerSideLoginComponent implements OnInit {
     this.isError = !this.checkFormValue();
 
     if(this.validateForm.status === 'VALID' ) {
-      console.log(this.validateForm.value);
-      this.httpRequest.showMessage('success', '验证通过！');
+      let formValue = this.validateForm.value;
+      let option = {
+        username: formValue.userName,
+        password: formValue.password,
+        captcha: formValue.captcha
+      };
+      this.indexService.loginIn(option).subscribe((res:ApiData) => {
+        if(res.code === 1){
+          this.indexService.showMessage('success', '登录成功');
+          if(res.data.type === 1 ) {
+            this.indexService.navTo('/companyAdmin');
+          }else {
+            this.indexService.navTo('/userAdmin');
+          }
+        }else {
+          this.indexService.showMessage('error', this.indexService.errorMsgDeal(res.data));
+        }
+      });
     }
     
   }
 
   getCaptcha() {
-    console.log('请求获取验证码图片');
+    this.indexService.sendCaptcha().subscribe((res:ApiData) => {
+      if(res.code === 1){
+        this.captchaSrc = res.data;
+      }else {
+        this.indexService.showMessage('error', res.msg);
+      }
+    })
   }
 
   checkFormValue():boolean{
-    
     for (const i in this.validateForm.controls) {
       if (this.validateForm.get(i).dirty && this.validateForm.get(i).errors) {
         this.isError = true;

@@ -1,0 +1,5 @@
+<div class="add-resume">
+  <div class="form" *ngIf="CONFIG.length != 0">
+    <dynamic-form [config]="CONFIG" [formTitle]="'创建简历'" (submitted)="formSubmitted($event)"></dynamic-form>
+  </div>
+</div>

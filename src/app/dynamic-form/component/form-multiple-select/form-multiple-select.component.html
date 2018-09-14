@@ -1,0 +1,8 @@
+<nz-form-item [formGroup]="group">
+  <nz-form-label [nzSm]="6" [nzXs]="24" [nzRequired] [nzFor]="config.field_name">{{ config.name }}</nz-form-label>
+  <nz-form-control [nzSm]="14" [nzXs]="24">
+    <nz-select style="width: 100%" nzMode="multiple" nzPlaceHolder="Please select" [formControlName]="config.field_name">
+      <nz-option *ngFor="let multipleSelect of config.config.option" [nzLabel]="multipleSelect.name" [nzValue]="multipleSelect.value"></nz-option>
+    </nz-select>
+  </nz-form-control>
+</nz-form-item>

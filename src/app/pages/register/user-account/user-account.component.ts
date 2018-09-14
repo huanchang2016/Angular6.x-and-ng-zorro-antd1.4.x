@@ -22,7 +22,7 @@ export class UserAccountComponent implements OnInit {
   ngOnInit(): void {
     this.validateForm = this.fb.group({
       username            : [ null, [ Validators.required ] ],
-      password         : [ null, [ Validators.required, Validators.minLength(6), Validators.maxLength(16) ] ],
+      password         : [ null, [ Validators.required, Validators.minLength(6) ] ],
       password_confirmed    : [ null, [ Validators.required, this.confirmationValidator ] ],
       captcha          : [ null, [ Validators.required ] ],
       agree: [ false, Validators.required ]
@@ -35,7 +35,7 @@ export class UserAccountComponent implements OnInit {
       this.validateForm.controls[ i ].markAsDirty();
       this.validateForm.controls[ i ].updateValueAndValidity();
     }
-    if(this.validateForm.status === "VALID") {
+    if(this.validateForm.status === "VALID" && this.validateForm.value.agree === true) {
       let formValue = this.validateForm.value;
       let option = {
         username: formValue.username,
@@ -43,16 +43,16 @@ export class UserAccountComponent implements OnInit {
         password_confirmation: formValue.password_confirmed,
         captcha: formValue.captcha
       }
-      this.httpRequest.post('/api/reg/username', option).subscribe((res:ApiData) => {
-        console.log(res);
-        if(res.code === 1){
-          
-        }else {
 
+      this.httpRequest.post('/api/reg/username', option).subscribe((res:ApiData) => {
+        if(res.code === 1){
+          this.httpRequest.showMessage('success', '注册成功');
+          this.httpRequest.navTo('/login');
+        }else {
+          this.httpRequest.showMessage('error', this.httpRequest.dealFailResponseData(res.data));
         }
       })
     }
-
   }
 
   updateConfirmValidator(): void {
@@ -100,8 +100,10 @@ export class UserAccountComponent implements OnInit {
   }
 
   changeCaptchImage() {
-    this.httpRequest.get('/api/get_captcha').subscribe((res:ApiData) => {
-      console.log(res);
+    this.validateForm.patchValue({
+      captcha: ''
+    })
+    this.httpRequest.sendImageCaptcha().subscribe((res:ApiData) => {
       if(res.code === 1){
         this.captchaSrc = res.data;
       }else {

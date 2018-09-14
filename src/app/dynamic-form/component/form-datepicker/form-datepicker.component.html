@@ -1,6 +1,20 @@
-<nz-form-item>
-  <nz-form-label [nzSm]="6" [nzXs]="24" [nzRequired] [nzFor]="config.name">{{ config.label }}</nz-form-label>
+<nz-form-item *ngIf="this.config.config.format === 'Y-m'">
+  <nz-form-label [nzSm]="6" [nzXs]="24" [nzRequired] [nzFor]="config.field_name">{{ config.name }}</nz-form-label>
   <nz-form-control [nzSm]="14" [nzXs]="24">
-    <nz-date-picker [(ngModel)]="date" (ngModelChange)="dateChange($event)"></nz-date-picker>
+    <nz-month-picker style="width: 100%;" [(ngModel)]="date" (ngModelChange)="dateChange($event)"></nz-month-picker>
+  </nz-form-control>
+</nz-form-item>
+
+<nz-form-item *ngIf="this.config.config.format === 'Y-m-d'">
+  <nz-form-label [nzSm]="6" [nzXs]="24" [nzRequired] [nzFor]="config.field_name">{{ config.name }}</nz-form-label>
+  <nz-form-control [nzSm]="14" [nzXs]="24">
+    <nz-date-picker style="width: 100%;" [(ngModel)]="date" (ngModelChange)="dateChange($event)"></nz-date-picker>
+  </nz-form-control>
+</nz-form-item>
+
+<nz-form-item *ngIf="this.config.config.format === 'Y-m-d H:i:s'">
+  <nz-form-label [nzSm]="6" [nzXs]="24" [nzRequired] [nzFor]="config.field_name">{{ config.name }}</nz-form-label>
+  <nz-form-control [nzSm]="14" [nzXs]="24">
+    <nz-date-picker style="width: 100%;" [(ngModel)]="date" (ngModelChange)="dateChange($event)" nzShowTime></nz-date-picker>
   </nz-form-control>
 </nz-form-item>

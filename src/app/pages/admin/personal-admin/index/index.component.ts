@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 const sideMenu = [
   {
     title: '账户管理',
-    titleIcon: 'anticon anticon-user',
+    titleIcon: 'icon iconfont icon-userset',
     subMenu: [
       { subTitle: '个人首页', path: './home' },
       { subTitle: '基本资料', path: './info' },

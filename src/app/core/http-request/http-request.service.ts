@@ -34,6 +34,11 @@ export class HttpRequestService {
     );
   }
 
+  // get image captcha 
+  sendImageCaptcha(){
+    return this.get('/api/get_captcha');
+  }
+
   // show message
   showMessage (type:string = 'success', message:string) {
     this.message.create(type, message);
@@ -41,6 +46,19 @@ export class HttpRequestService {
   // router navigation
   navTo(url){
     this.route.navigateByUrl(url);
+  }
+
+  dealFailResponseData(option):string{
+    let errorMsg:string = '';
+    for (const attr in option) {
+      if (option.hasOwnProperty(attr)) {
+        const element = option[attr];
+        for(let i=0, j=element.length; i<j; i++){
+          errorMsg += element[i] + (i == j - 1 ? '!' : ',');
+        }
+      }
+    }
+    return errorMsg;
   }
   
   // set Title

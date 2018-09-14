@@ -21,7 +21,7 @@ export class FormMultipleFileComponent implements OnInit {
 
   beforeUpload = (file: UploadFile): boolean => {
     this.fileList.push(file);
-    this.group.value[this.config.name] = this.fileList;
+    this.group.value[this.config.field_name] = this.fileList;
     return false;
   }
 }

@@ -3,24 +3,38 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'dynamic-form',
-  styleUrls: ['dynamic-form.component.scss'],
   template: `
     <form
       nz-form
       [formGroup]="form"
       (ngSubmit)="submitted.emit(form)">
       <ng-container
-        *ngFor="let field of config;"
+        *ngFor="let field of _config;"
         dynamicField
         [config]="field"
         [group]="form">
       </ng-container>
+      <nz-form-item nz-row class="text-center" *ngIf="formTitle">
+        <nz-form-control>
+          <button nz-button nzType="primary">{{ formTitle }}</button>
+        </nz-form-control>
+      </nz-form-item>
     </form>
   `
 })
 export class DynamicFormComponent implements OnInit {
+  public _config:any[] = [];
+
   @Input()
-  config: any[] = [];
+  set config(val) {
+    if(val) {
+      this._config = val;
+      this.form = this.createGroup();
+    }
+  }
+
+  @Input()
+  formTitle:string;
 
   @Output()
   submitted: EventEmitter<any> = new EventEmitter<any>();
@@ -29,14 +43,13 @@ export class DynamicFormComponent implements OnInit {
 
   constructor(private fb: FormBuilder) { }
 
-  ngOnInit() {
-    this.form = this.createGroup();
-  }
+  ngOnInit() { }
 
   createGroup() {
+    console.log(this._config);
     const group = this.fb.group({});
-    this.config.forEach(control => {
-      group.addControl(control.name, this.fb.control(control.value, [Validators.required, Validators.maxLength(10)] ));
+    this._config.forEach(control => {
+      group.addControl(control.field_name, this.fb.control(control.config.default_value, [Validators.required] ));
     });
     console.log(group);
     return group;

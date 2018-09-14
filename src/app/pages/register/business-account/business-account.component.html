@@ -6,7 +6,7 @@
           <div class="card-title-border-top bg-primary"></div>
           <div class="card-title-content">
             <span class="card-title-bg"></span>
-            <span>用户注册</span>
+            <span>企业注册</span>
           </div>
         </h2>
       </div>
@@ -88,7 +88,7 @@
                       <input nz-input formControlName="captcha" placeholder="输入验证码" id="captcha">
                     </div>
                     <div nz-col [nzSpan]="12" class="clearfix">
-                      <div class="captcha-box fl"><img src="/assets/lib/imgs/test/yzm.jpg" alt=""></div>
+                      <div class="captcha-box fl"><img [src]="'http://localhost/captcha/' + captchaSrc.url" alt=""></div>
                       <div class="changeCaptch fl">
                         看不清?<a href="javascript:;" (click)="changeCaptchImage()"><u>换一张</u></a>
                       </div>

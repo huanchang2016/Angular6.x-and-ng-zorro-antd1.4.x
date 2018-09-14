@@ -1,8 +1,8 @@
 <nz-form-item [formGroup]="group">
-  <nz-form-label [nzSm]="6" [nzXs]="24" [nzRequired] [nzFor]="config.name">{{ config.label }}</nz-form-label>
+  <nz-form-label [nzSm]="6" [nzXs]="24" [nzRequired] [nzFor]="config.field_name">{{ config.name }}</nz-form-label>
   <nz-form-control [nzSm]="14" [nzXs]="24">
-    <nz-cascader [nzExpandTrigger]="'hover'" [nzOptions]="config.options" [formControlName]="config.name" [nzPlaceHolder]="config.placeholder" (ngModelChange)="onChanges($event)">
+    <nz-cascader [nzExpandTrigger]="'hover'" [nzOptions]="config.options" [formControlName]="config.field_name" [nzPlaceHolder]="config.placeholder" (ngModelChange)="onChanges($event)">
     </nz-cascader>
-    <nz-form-explain *ngIf="group.get(config.name).dirty && group.get(config.name).errors">Please input your password!</nz-form-explain>
+    <nz-form-explain *ngIf="group.get(config.field_name).dirty && group.get(config.field_name).errors">Please input your password!</nz-form-explain>
   </nz-form-control>
 </nz-form-item>

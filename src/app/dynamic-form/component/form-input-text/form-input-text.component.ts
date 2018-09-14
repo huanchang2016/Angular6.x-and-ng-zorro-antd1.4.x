@@ -12,7 +12,7 @@ export class FormInputTextComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
+    console.log(1);
   }
 
   onChange($event:string){

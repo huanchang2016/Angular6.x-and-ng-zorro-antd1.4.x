@@ -12,4 +12,9 @@ export class PasswordManageComponent implements OnInit {
   ngOnInit() {
   }
 
+  getPasswordModifyValue($event) {
+    console.log($event);
+    
+  }
+
 }

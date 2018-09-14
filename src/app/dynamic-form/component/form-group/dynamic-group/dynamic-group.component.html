@@ -1,0 +1,16 @@
+<div class="creat-form border-primay">
+  <div class="title">
+    <app-tab-title [Title]="config.name"></app-tab-title>
+    <p class="danger group-notice">{{config.name}}信息填写完成后需要点击保存按钮，否则数据无效！</p>
+  </div>
+  <form nz-form [formGroup]="createFormGroup" (ngSubmit)="submittedGroup.emit(createFormGroup)">
+    <ng-container *ngFor="let field of config.config.option" dynamicField [config]="field" [group]="createFormGroup"></ng-container>
+    <nz-form-item nz-row>
+      <nz-form-control>
+        <button nz-button nzType="primary">保存当前{{config.name}}</button>
+        <a (click)="addGroupForm()" href="javascript:;" class="add-group">新建</a>
+        <a class="deleted-group danger fr" nz-popconfirm nzTitle="您确定要删除当前{{config.name}}?" nzOkText="确定" nzCancelText="取消" (nzOnConfirm)="delCurrentForm()" (nzOnCancel)="cancel()">删除</a>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</div>

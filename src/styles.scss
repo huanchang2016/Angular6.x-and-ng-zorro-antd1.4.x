@@ -10,6 +10,9 @@ $color in $colors {
     .bg-#{$class} {
         background-color: $color !important;
     }
+    .border-#{$class} {
+        border-color: $color !important;
+    }
 }
 
 .hover:hover {

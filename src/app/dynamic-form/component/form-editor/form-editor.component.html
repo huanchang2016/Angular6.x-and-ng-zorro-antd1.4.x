@@ -1,6 +1,6 @@
 <nz-form-item [formGroup]="group">
-    <nz-form-label [nzSm]="6" [nzXs]="24" [nzRequired] [nzFor]="config.name">{{ config.label }}</nz-form-label>
+    <nz-form-label [nzSm]="6" [nzXs]="24" [nzRequired] [nzFor]="config.field_name">{{ config.name }}</nz-form-label>
     <nz-form-control [nzSm]="14" [nzXs]="24">
-        <my-editor [content]="config.value" (myEditorContent)="getMyEditorContent($event)"></my-editor>
+        <my-editor [content]="config.config.default_value" (myEditorContent)="getMyEditorContent($event)"></my-editor>
     </nz-form-control>
 </nz-form-item>

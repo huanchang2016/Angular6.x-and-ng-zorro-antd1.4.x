@@ -23,7 +23,6 @@ export class FormMultipleImagesComponent implements OnInit {
   }
 
   beforeUpload = (file: UploadFile) => {
-    console.log(file);
     let isJPG = file.type.indexOf('image/') != -1;
     if (!isJPG) {
       this.dynamicService.showMessage('error', '只能上传图片格式的文件!');
@@ -35,7 +34,7 @@ export class FormMultipleImagesComponent implements OnInit {
       return false;
     }
     this.fileList.push(file);
-    this.group.value[this.config.name] = this.fileList;
+    this.group.value[this.config.field_name] = this.fileList;
     return false;
   }
 }
